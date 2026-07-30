@@ -33,13 +33,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Kenechukwu Okoye — Product Designer & Developer",
       description: "Clear, human digital experiences.",
       type: "website",
-      images: [{ url: `${origin}/og.png`, width: 1200, height: 630 }],
+      images: [{ url: `${origin}/og-v2.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Kenechukwu Okoye — Product Designer & Developer",
       description: "Clear, human digital experiences.",
-      images: [`${origin}/og.png`],
+      images: [`${origin}/og-v2.png`],
     },
   };
 }
