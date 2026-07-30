@@ -68,12 +68,12 @@ const projects = [
 ];
 
 const tools = [
-  { name: "Figma", mark: "Fi", use: "Flows, wireframes, UI systems & prototypes" },
-  { name: "ChatGPT", mark: "AI", use: "Research synthesis, ideation & AI workflows" },
-  { name: "Claude", mark: "Cl", use: "Product thinking, writing & code collaboration" },
-  { name: "Canva", mark: "Ca", use: "Fast visual communication & presentations" },
-  { name: "VS Code", mark: "</>", use: "Front-end development, testing & debugging" },
-  { name: "GitHub", mark: "Gt", use: "Version control & product collaboration" },
+  { name: "Figma", logo: "/tools/figma.png", use: "Flows, wireframes, UI systems & prototypes" },
+  { name: "ChatGPT", logo: "/tools/chatgpt.png", use: "Research synthesis, ideation & AI workflows" },
+  { name: "Claude", logo: "/tools/claude.png", use: "Product thinking, writing & code collaboration" },
+  { name: "Canva", logo: "/tools/canva.jfif", use: "Fast visual communication & presentations" },
+  { name: "VS Code", logo: "/tools/vscode.png", use: "Front-end development, testing & debugging" },
+  { name: "GitHub", logo: "/tools/github.png", use: "Version control & product collaboration" },
 ];
 
 const capabilities = [
@@ -145,6 +145,12 @@ export default function Home() {
           Available for work
         </a>
       </nav>
+
+      <a className="contact-dock magnetic" href="mailto:keneochine@gmail.com">
+        <span className="contact-dock-label">Email me</span>
+        <strong>keneochine@gmail.com</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
 
       <header className="hero shell" id="top">
         <div className="hero-kicker reveal">
@@ -279,7 +285,9 @@ export default function Home() {
             {tools.map((tool, index) => (
               <article className="tool-card reveal tilt-card" key={tool.name}>
                 <span className="tool-index">0{index + 1}</span>
-                <div className="tool-mark" aria-hidden="true">{tool.mark}</div>
+                <div className="tool-mark">
+                  <img src={tool.logo} alt={`${tool.name} logo`} loading="lazy" />
+                </div>
                 <h3>{tool.name}</h3>
                 <p>{tool.use}</p>
               </article>
@@ -466,18 +474,45 @@ export default function Home() {
             <em>worth using.</em>
           </h2>
           <a className="email-link magnetic reveal" href="mailto:keneochine@gmail.com">
-            keneochine@gmail.com <span>↗</span>
+            <span className="email-intro">
+              <small>Start a conversation</small>
+              <strong>keneochine@gmail.com</strong>
+            </span>
+            <span className="email-action" aria-hidden="true">↗</span>
           </a>
+          <div className="social-links reveal" aria-label="Social profiles">
+            <a
+              href="https://linkedin.com/in/kenechukwu-daniel-0a3918413"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Kenechukwu Okoye on LinkedIn"
+            >
+              <span className="social-logo linkedin-logo" aria-hidden="true">in</span>
+              <span>
+                <small>Professional profile</small>
+                <strong>LinkedIn</strong>
+              </span>
+              <i aria-hidden="true">↗</i>
+            </a>
+            <a
+              href="https://x.com/koda_thegreat7"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Kenechukwu Okoye on X"
+            >
+              <span className="social-logo x-logo" aria-hidden="true">X</span>
+              <span>
+                <small>@koda_thegreat7</small>
+                <strong>Follow on X</strong>
+              </span>
+              <i aria-hidden="true">↗</i>
+            </a>
+          </div>
           <div className="footer-bottom">
             <p>© 2026 Kenechukwu Okoye</p>
             <div>
-              <a
-                href="https://linkedin.com/in/kenechukwu-daniel-0a3918413"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn ↗
-              </a>
+              <a href="mailto:keneochine@gmail.com">Email</a>
+              <a href="https://x.com/koda_thegreat7" target="_blank" rel="noreferrer">X / Twitter ↗</a>
               <a href="#top">Back to top ↑</a>
             </div>
           </div>
