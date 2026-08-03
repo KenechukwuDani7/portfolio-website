@@ -23,6 +23,8 @@ export default function MotionLayer() {
       document.querySelectorAll<HTMLElement>("[data-parallax], [data-speed]"),
     );
     const progress = document.querySelector<HTMLElement>(".scroll-progress");
+    const finePointer = window.matchMedia("(pointer: fine)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
 
     const updateScroll = () => {
@@ -31,9 +33,10 @@ export default function MotionLayer() {
         const y = window.scrollY;
         const max = document.documentElement.scrollHeight - window.innerHeight;
         if (progress) progress.style.transform = `scaleX(${max ? y / max : 0})`;
+        const allowParallax = window.innerWidth > 768 && !reducedMotion.matches;
         parallax.forEach((element) => {
           const factor = Number(element.dataset.parallax ?? element.dataset.speed ?? 0);
-          element.style.setProperty("--parallax-y", `${y * factor}px`);
+          element.style.setProperty("--parallax-y", allowParallax ? `${y * factor}px` : "0px");
         });
       });
     };
@@ -66,10 +69,12 @@ export default function MotionLayer() {
     );
     const enter = () => root.classList.add("cursor-active");
     const leave = () => root.classList.remove("cursor-active");
-    interactive.forEach((element) => {
-      element.addEventListener("pointerenter", enter);
-      element.addEventListener("pointerleave", leave);
-    });
+    if (finePointer.matches && !reducedMotion.matches) {
+      interactive.forEach((element) => {
+        element.addEventListener("pointerenter", enter);
+        element.addEventListener("pointerleave", leave);
+      });
+    }
 
     const tiltCards = Array.from(document.querySelectorAll<HTMLElement>(".tilt-card"));
     const tiltMove = (event: PointerEvent) => {
@@ -87,21 +92,27 @@ export default function MotionLayer() {
       card.style.setProperty("--rotate-y", "0deg");
       card.style.setProperty("--rotate-x", "0deg");
     };
-    tiltCards.forEach((card) => {
-      card.addEventListener("pointermove", tiltMove);
-      card.addEventListener("pointerleave", tiltReset);
-    });
+    if (finePointer.matches && !reducedMotion.matches) {
+      tiltCards.forEach((card) => {
+        card.addEventListener("pointermove", tiltMove);
+        card.addEventListener("pointerleave", tiltReset);
+      });
+    }
 
     window.addEventListener("scroll", updateScroll, { passive: true });
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("resize", updateScroll, { passive: true });
+    if (finePointer.matches && !reducedMotion.matches) {
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      animateCursor();
+    }
     updateScroll();
-    animateCursor();
 
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
       cancelAnimationFrame(cursorFrame);
       window.removeEventListener("scroll", updateScroll);
+      window.removeEventListener("resize", updateScroll);
       window.removeEventListener("pointermove", onPointerMove);
       interactive.forEach((element) => {
         element.removeEventListener("pointerenter", enter);

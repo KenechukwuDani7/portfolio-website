@@ -482,7 +482,7 @@ export default function Home() {
           </a>
           <div className="social-links reveal" aria-label="Social profiles">
             <a
-              href="https://linkedin.com/in/kenechukwu-daniel-0a3918413"
+              href="https://www.linkedin.com/in/kenechukwu-okoye-chine-0a3918413/"
               target="_blank"
               rel="noreferrer"
               aria-label="Kenechukwu Okoye on LinkedIn"
