@@ -4,9 +4,9 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const SITE_URL = "https://kenechukwuokoye.vercel.app";
-const TITLE = "Kenechukwu Okoye | Product Designer & Software Developer";
+const TITLE = "Kenechukwu Okoye-Chine | Product Designer & Developer";
 const DESCRIPTION =
-  "Kenechukwu Okoye is a product designer and software developer in Nigeria, creating accessible digital products across UX, AI, fintech and mobile experiences.";
+  "Portfolio of Kenechukwu Okoye-Chine, also known as Kenechukwu Okoye, a Nigeria-based product designer and software developer working across UX, AI and fintech.";
 
 const geist = Geist({
   variable: "--font-sans",
@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   category: "Portfolio",
   keywords: [
     "Kenechukwu Okoye",
+    "Kenechukwu Okoye-Chine",
+    "Kenechukwu",
+    "Okoye-Chine",
     "product designer Nigeria",
     "UI UX designer",
     "software developer Nigeria",
@@ -87,6 +90,7 @@ const profileJsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "Kenechukwu Okoye Portfolio",
+      alternateName: "Kenechukwu Okoye-Chine Portfolio",
       description: DESCRIPTION,
       inLanguage: "en-NG",
     },
@@ -103,6 +107,13 @@ const profileJsonLd = {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
       name: "Kenechukwu Okoye",
+      alternateName: [
+        "Kenechukwu Okoye-Chine",
+        "Koda the Great",
+        "@koda_thegreat7",
+      ],
+      givenName: "Kenechukwu",
+      familyName: "Okoye-Chine",
       url: SITE_URL,
       image: `${SITE_URL}/portrait.jpg`,
       email: "mailto:keneochine@gmail.com",

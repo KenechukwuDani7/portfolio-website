@@ -29,7 +29,7 @@ test("server-renders the finished portfolio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Kenechukwu Okoye \| Product Designer &amp; Software Developer<\/title>/i);
+  assert.match(html, /<title>Kenechukwu Okoye-Chine \| Product Designer &amp; Developer<\/title>/i);
   assert.match(html, /<h1[^>]*class="hero-title"/i);
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/?"/i);
   assert.match(
@@ -37,6 +37,8 @@ test("server-renders the finished portfolio", async () => {
     /name="google-site-verification" content="0XYMnU1dN57XCMeWDUliv_v61zovfX6QOpiOMABZ1Cg"/i,
   );
   assert.match(html, /application\/ld\+json/i);
+  assert.match(html, /Kenechukwu Okoye-Chine/);
+  assert.match(html, /Koda the Great/);
   assert.match(html, /Products shaped from/);
   assert.match(html, /Tools I use/);
   assert.match(html, /keneochine@gmail\.com/);
@@ -69,6 +71,8 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(page, /github\.com\/KenechukwuDani7/);
   assert.match(layout, /alternates:\s*\{ canonical: "\/" \}/);
   assert.match(layout, /"@type": "ProfilePage"/);
+  assert.match(layout, /alternateName/);
+  assert.match(layout, /familyName: "Okoye-Chine"/);
   assert.match(layout, /<Analytics \/>/);
 });
 

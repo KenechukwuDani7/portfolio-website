@@ -379,6 +379,10 @@ export default function Home() {
             practice across digital product design, software and applied AI.
           </p>
           <p className="reveal">
+            You may also find my work under my full name, Kenechukwu
+            Okoye-Chine, or through my online identity, Koda the Great.
+          </p>
+          <p className="reveal">
             I care about user-centred experiences that balance function and
             aesthetics. I’m at my best collaborating on meaningful products,
             untangling complex problems and turning them into interfaces people
