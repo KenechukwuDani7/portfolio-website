@@ -29,7 +29,10 @@ test("server-renders the finished portfolio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Kenechukwu Okoye — Product Designer &amp; Developer<\/title>/i);
+  assert.match(html, /<title>Kenechukwu Okoye \| Product Designer &amp; Software Developer<\/title>/i);
+  assert.match(html, /<h1[^>]*class="hero-title"/i);
+  assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/?"/i);
+  assert.match(html, /application\/ld\+json/i);
   assert.match(html, /Products shaped from/);
   assert.match(html, /Tools I use/);
   assert.match(html, /keneochine@gmail\.com/);
@@ -37,6 +40,7 @@ test("server-renders the finished portfolio", async () => {
     html,
     /https:\/\/www\.linkedin\.com\/in\/kenechukwu-okoye-chine-0a3918413\//,
   );
+  assert.match(html, /https:\/\/github\.com\/KenechukwuDani7/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
@@ -58,5 +62,19 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(motion, /window\.innerWidth > 768/);
   assert.match(motion, /\(pointer: fine\)/);
   assert.match(page, /kenechukwu-okoye-chine-0a3918413/);
+  assert.match(page, /github\.com\/KenechukwuDani7/);
+  assert.match(layout, /alternates:\s*\{ canonical: "\/" \}/);
+  assert.match(layout, /"@type": "ProfilePage"/);
   assert.match(layout, /<Analytics \/>/);
+});
+
+test("publishes search-engine discovery files", async () => {
+  const [sitemap, robots] = await Promise.all([
+    readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/robots.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(sitemap, /kenechukwuokoye\.vercel\.app/);
+  assert.match(robots, /sitemap\.xml/);
+  assert.match(robots, /allow: "\/"/);
 });

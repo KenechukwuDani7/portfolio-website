@@ -158,14 +158,14 @@ export default function Home() {
           <span>Software developer</span>
           <span>Port Harcourt, Nigeria</span>
         </div>
-        <div className="hero-title" aria-label="Kenechukwu Okoye">
+        <h1 className="hero-title" aria-label="Kenechukwu Okoye">
           <span className="hero-name-row" data-speed="0.04">
             KENECHUKWU
           </span>
           <span className="hero-name-row outline" data-speed="-0.03">
             OKOYE
           </span>
-        </div>
+        </h1>
         <div className="hero-statement reveal">
           <p>
             I design and build useful digital products at the intersection of
@@ -507,11 +507,27 @@ export default function Home() {
               </span>
               <i aria-hidden="true">↗</i>
             </a>
+            <a
+              href="https://github.com/KenechukwuDani7"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Kenechukwu Okoye on GitHub"
+            >
+              <span className="social-logo github-logo" aria-hidden="true">
+                <img src="/tools/github.png" alt="" />
+              </span>
+              <span>
+                <small>Code & projects</small>
+                <strong>GitHub</strong>
+              </span>
+              <i aria-hidden="true">↗</i>
+            </a>
           </div>
           <div className="footer-bottom">
             <p>© 2026 Kenechukwu Okoye</p>
             <div>
               <a href="mailto:keneochine@gmail.com">Email</a>
+              <a href="https://github.com/KenechukwuDani7" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a href="https://x.com/koda_thegreat7" target="_blank" rel="noreferrer">X / Twitter ↗</a>
               <a href="#top">Back to top ↑</a>
             </div>

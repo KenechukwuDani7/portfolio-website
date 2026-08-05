@@ -200,7 +200,7 @@ a, p, h1, h2, h3, strong { overflow-wrap: anywhere; }
 .hero-title {
   position: relative;
   z-index: 2;
-  margin-top: 72px;
+  margin: 72px 0 0;
 }
 .hero-name-row {
   display: block;
@@ -777,7 +777,7 @@ footer .eyebrow { color: #555; }
 }
 .social-links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 22px;
   border: 1px solid rgba(0,0,0,.22);
   border-radius: 6px;
@@ -792,7 +792,7 @@ footer .eyebrow { color: #555; }
   padding: 25px 28px;
   transition: background .3s, color .3s;
 }
-.social-links > a:first-child { border-right: 1px solid rgba(0,0,0,.22); }
+.social-links > a:not(:last-child) { border-right: 1px solid rgba(0,0,0,.22); }
 .social-links > a:hover { background: #0a0a0a; color: #f2f2ee; }
 .social-logo {
   width: 52px;
@@ -817,6 +817,12 @@ footer .eyebrow { color: #555; }
   border-color: #050505;
   font-family: Arial, sans-serif;
 }
+.github-logo {
+  overflow: hidden;
+  background: #050505;
+  border-color: #050505;
+}
+.github-logo img { width: 100%; height: 100%; object-fit: cover; }
 .social-links > a:hover .social-logo { border-color: #f2f2ee; }
 .social-links > a > span:nth-child(2) { display: grid; gap: 7px; }
 .social-links small {
@@ -921,7 +927,7 @@ footer .eyebrow { color: #555; }
   .email-intro strong { font-size: clamp(.92rem, 4.4vw, 1.1rem); }
   .email-action { width: 48px; height: 48px; }
   .social-links { grid-template-columns: 1fr; }
-  .social-links > a:first-child { border-right: 0; border-bottom: 1px solid rgba(0,0,0,.22); }
+  .social-links > a:not(:last-child) { border-right: 0; border-bottom: 1px solid rgba(0,0,0,.22); }
   .contact-dock { right: 12px; bottom: 12px; }
   .contact-dock strong { display: none; }
   .contact-dock:hover { grid-template-columns: auto auto; }
