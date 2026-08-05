@@ -32,6 +32,10 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /<title>Kenechukwu Okoye \| Product Designer &amp; Software Developer<\/title>/i);
   assert.match(html, /<h1[^>]*class="hero-title"/i);
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/?"/i);
+  assert.match(
+    html,
+    /name="google-site-verification" content="0XYMnU1dN57XCMeWDUliv_v61zovfX6QOpiOMABZ1Cg"/i,
+  );
   assert.match(html, /application\/ld\+json/i);
   assert.match(html, /Products shaped from/);
   assert.match(html, /Tools I use/);
