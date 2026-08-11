@@ -6,7 +6,8 @@ const projects = [
     index: "01",
     type: "AI Study Assistant",
     year: "2026",
-    image: "/work/mentra.png",
+    image: "/work/mentra/home.jpg",
+    href: "/work/mentra",
     className: "project-mentra",
     description:
       "An accessible AI learning companion that turns uploaded materials into clear answers, summaries, flashcards and practice tests.",
@@ -23,6 +24,7 @@ const projects = [
     type: "Digital Payments",
     year: "2025",
     image: "/work/sabian-pay.png",
+    href: null,
     className: "project-wide",
     description:
       "A focused fintech experience for funding wallets, paying bills, buying airtime and keeping everyday transactions easy to understand.",
@@ -39,6 +41,7 @@ const projects = [
     type: "Digital Payments",
     year: "2025",
     image: "/work/golden-bills.png",
+    href: null,
     className: "project-wide project-gold",
     description:
       "A warmer visual direction for the payments system, designed to make routine digital services feel clear and approachable.",
@@ -55,6 +58,7 @@ const projects = [
     type: "Food Ordering App",
     year: "2025",
     image: "/work/chow-now.png",
+    href: null,
     className: "project-wide project-chow",
     description:
       "A complete food-ordering journey shaped through research, personas, information architecture, high-fidelity screens and prototyping.",
@@ -255,6 +259,11 @@ export default function Home() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
+                {project.href ? (
+                  <a className="project-case-link magnetic" href={project.href}>
+                    View case study <span aria-hidden="true">↗</span>
+                  </a>
+                ) : null}
               </div>
               <div className="project-detail">
                 <div>

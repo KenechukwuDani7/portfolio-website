@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${pathname}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -50,6 +50,20 @@ test("server-renders the finished portfolio", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
+test("server-renders the Mentra AI case study", async () => {
+  const response = await render("/work/mentra");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Mentra AI Case Study \| Kenechukwu Okoye-Chine<\/title>/i);
+  assert.match(html, /A study system that turns course material into/i);
+  assert.match(html, /momentum/i);
+  assert.match(html, /Ask Mentra/i);
+  assert.match(html, /Expo \/ React Native/i);
+  assert.match(html, /\/work\/mentra\/settings\.jpg/i);
+  assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/mentra"/i);
+});
+
 test("keeps the portfolio responsive and touch-friendly", async () => {
   const [css, motion, page, layout] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -83,6 +97,7 @@ test("publishes search-engine discovery files", async () => {
   ]);
 
   assert.match(sitemap, /kenechukwuokoye\.vercel\.app/);
+  assert.match(sitemap, /work\/mentra/);
   assert.match(robots, /sitemap\.xml/);
   assert.match(robots, /allow: "\/"/);
 });
