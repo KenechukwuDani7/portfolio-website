@@ -23,7 +23,7 @@ const projects = [
     index: "02",
     type: "Construction Company Website",
     year: "2026",
-    image: "/work/osuko/hero-desktop.png",
+    image: "/work/osuko/hero-desktop.webp",
     href: "/work/osuko",
     className: "project-wide project-osuko",
     description:
@@ -259,6 +259,7 @@ export default function Home() {
                   src={project.image}
                   alt={`${project.title} interface design`}
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="glass-label">
                   <span>{project.type}</span>

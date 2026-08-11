@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "How a clear editorial system turned OSUKO’s purpose, services and process into a credible construction-company website.",
     url: `${SITE_URL}/work/osuko`,
     type: "article",
-    images: [{ url: "/work/osuko/hero-desktop.png", alt: "OSUKO Construction website landing page" }],
+    images: [{ url: "/work/osuko/hero-desktop.webp", alt: "OSUKO Construction website landing page" }],
   },
 };
 
@@ -25,7 +25,7 @@ const chapters = [
     label: "Services",
     title: "Capability made easy to scan.",
     text: "Residential construction, commercial projects, project management and civil works needed to feel connected without becoming a wall of information. A numbered service system and generous spacing let prospects understand the company’s range in seconds, then slow down for detail.",
-    image: "/work/osuko/services-desktop.png",
+    image: "/work/osuko/services-desktop.webp",
     alt: "OSUKO construction services section",
     insight: "Information architecture · Service hierarchy · Editorial layout",
   },
@@ -34,7 +34,7 @@ const chapters = [
     label: "Process",
     title: "Trust built into the journey.",
     text: "Construction clients need visibility as much as ambition. The four-step process—from discovery and planning to communication and handover—turns an operational promise into a reassuring, concrete story. The split layout balances technical structure with human confidence.",
-    image: "/work/osuko/process-desktop.png",
+    image: "/work/osuko/process-desktop.webp",
     alt: "OSUKO four-step construction process section",
     insight: "Process storytelling · Trust signals · Visual rhythm",
   },
@@ -43,7 +43,7 @@ const chapters = [
     label: "Selected focus",
     title: "The work carries the proof.",
     text: "Large, carefully framed imagery gives the portfolio section weight while the surrounding typography keeps it connected to the brand system. The composition moves between residential character, active delivery and precision-led execution without losing hierarchy.",
-    image: "/work/osuko/work-desktop.png",
+    image: "/work/osuko/work-desktop.webp",
     alt: "OSUKO selected construction focus and project imagery",
     insight: "Image direction · Project framing · Responsive composition",
   },
@@ -52,7 +52,7 @@ const chapters = [
     label: "Conversion",
     title: "A conversation, not a cold form.",
     text: "The enquiry section asks for only the details needed to begin: contact information, project type and a short brief. Clear direct-contact alternatives and the deep-red brand field make the call to action feel like the natural conclusion to the story—not an interruption.",
-    image: "/work/osuko/contact-desktop.png",
+    image: "/work/osuko/contact-desktop.webp",
     alt: "OSUKO construction project enquiry form",
     insight: "Lead capture · Form UX · Contact strategy",
   },
@@ -104,7 +104,14 @@ export default function OsukoCaseStudy() {
           </div>
         </div>
         <div className="osuko-hero-frame">
-          <img src="/work/osuko/hero-desktop.png" alt="OSUKO Construction website desktop landing page" />
+          <img
+            src="/work/osuko/hero-desktop.webp"
+            alt="OSUKO Construction website desktop landing page"
+            width="1200"
+            height="833"
+            decoding="async"
+            fetchPriority="high"
+          />
           <div><span>Live interface</span><strong>Desktop / Home</strong></div>
         </div>
       </header>
@@ -145,7 +152,14 @@ export default function OsukoCaseStudy() {
           </p>
         </div>
         <div className="mobile-device">
-          <img src="/work/osuko/hero-mobile.png" alt="OSUKO Construction mobile landing page" loading="lazy" />
+          <img
+            src="/work/osuko/hero-mobile.webp"
+            alt="OSUKO Construction mobile landing page"
+            width="390"
+            height="844"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -164,7 +178,14 @@ export default function OsukoCaseStudy() {
               <small>{chapter.insight}</small>
             </div>
             <figure>
-              <img src={chapter.image} alt={chapter.alt} loading="lazy" />
+              <img
+                src={chapter.image}
+                alt={chapter.alt}
+                width="1200"
+                height="833"
+                loading="lazy"
+                decoding="async"
+              />
             </figure>
           </article>
         ))}

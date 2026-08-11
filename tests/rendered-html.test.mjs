@@ -74,7 +74,7 @@ test("server-renders the OSUKO Construction case study", async () => {
   assert.match(html, /what lasts/i);
   assert.match(html, /https:\/\/osukoconstruction\.vercel\.app\//i);
   assert.match(html, /Next\.js \/ React/i);
-  assert.match(html, /\/work\/osuko\/contact-desktop\.png/i);
+  assert.match(html, /\/work\/osuko\/contact-desktop\.webp/i);
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/osuko"/i);
 });
 
