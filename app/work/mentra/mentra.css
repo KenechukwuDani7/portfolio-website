@@ -118,10 +118,25 @@
 .reflection { padding-block: 170px; border-top: 1px solid #25262a; }
 .reflection blockquote { max-width: 1050px; margin: 54px 0 45px; font-family: var(--font-serif), serif; font-size: clamp(3rem, 6.1vw, 6rem); font-style: italic; letter-spacing: -.05em; line-height: 1.03; }
 .reflection > p:last-child { max-width: 700px; margin-left: auto; color: #95979d; font-size: 1.04rem; line-height: 1.8; }
-.mentra-footer { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: end; padding-block: 100px 50px; border-top: 1px solid #25262a; }
-.mentra-footer p { grid-column: 1 / -1; margin: 0; color: #72747a; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
-.mentra-footer > a:not(.all-work) { font-size: clamp(2.2rem, 5vw, 5rem); font-weight: 510; letter-spacing: -.06em; }
-.all-work { justify-self: end; padding-bottom: 10px; color: #999ba1 !important; font-size: .75rem; text-transform: uppercase; }
+.mentra-footer {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+  padding: 76px 64px 56px;
+  overflow: hidden;
+  border: 1px solid rgba(122,163,255,.28);
+  border-radius: 26px;
+  background: linear-gradient(135deg, #143f9a 0%, #0b255c 48%, #0a0f1d 100%);
+  color: #fff;
+}
+.mentra-footer::after { content: ""; position: absolute; z-index: -1; right: -8%; bottom: -75%; width: 420px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 55px rgba(47,109,246,.12), 0 0 0 110px rgba(47,109,246,.07); }
+.mentra-footer p { grid-column: 1 / -1; margin: 0; color: #a9c4ff; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.mentra-footer > a:not(.all-work) { position: relative; z-index: 1; max-width: 100%; font-size: clamp(2.2rem, 5vw, 5rem); font-weight: 510; letter-spacing: -.06em; }
+.all-work { position: relative; z-index: 1; justify-self: end; padding: 13px 17px; border: 1px solid rgba(255,255,255,.28); border-radius: 100px; color: #fff !important; font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; }
 
 @keyframes mentraFloat { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-18px) rotate(1deg); } }
 
@@ -162,8 +177,9 @@
   .story-row:hover .story-screen img { transform: none; }
   .build-section, .reflection { padding-block: 120px; }
   .reflection blockquote { font-size: 3rem; }
-  .mentra-footer { grid-template-columns: 1fr; padding-top: 80px; }
-  .mentra-footer > a:not(.all-work) { font-size: 2.05rem; word-break: break-word; }
+  .mentra-footer { grid-template-columns: 1fr; gap: 28px; padding: 58px 24px 28px; border-radius: 20px; }
+  .mentra-footer::after { right: -45%; bottom: -48%; width: 300px; }
+  .mentra-footer > a:not(.all-work) { font-size: clamp(1.72rem, 8vw, 2.05rem); word-break: break-word; }
   .all-work { justify-self: start; }
 }
 

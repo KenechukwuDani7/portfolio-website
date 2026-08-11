@@ -737,7 +737,7 @@ em { font-family: var(--font-serif), Georgia, serif; font-weight: 500; }
 .principle-list h3 { font-size: 1.7rem; font-weight: 510; letter-spacing: -.04em; }
 .principle-list p { color: #858585; line-height: 1.65; }
 
-footer { background: #ecece8; color: #080808; padding-top: 145px; }
+footer#contact { background: #ecece8; color: #080808; padding-top: 145px; }
 .footer-inner > h2 {
   margin: 30px 0 80px;
   font-size: clamp(4rem, 7vw, 7.8rem);
@@ -745,7 +745,7 @@ footer { background: #ecece8; color: #080808; padding-top: 145px; }
   letter-spacing: -.07em;
   font-weight: 540;
 }
-footer .eyebrow { color: #555; }
+footer#contact .eyebrow { color: #555; }
 .email-link {
   width: 100%;
   display: flex;
@@ -941,7 +941,7 @@ footer .eyebrow { color: #555; }
   .timeline-detail, .timeline-meta { grid-column: 2; grid-row: auto; justify-self: start; text-align: left; }
   .principle-list article { grid-template-columns: 40px 1fr; gap: 16px; padding-block: 28px; }
   .principle-list p { grid-column: 2; }
-  footer { padding-top: 95px; }
+  footer#contact { padding-top: 95px; }
   .footer-inner > h2 { font-size: clamp(2.85rem, 14vw, 3.6rem); margin-bottom: 55px; }
   .email-link { padding: 24px 20px; }
   .email-intro strong { font-size: clamp(.92rem, 4.4vw, 1.1rem); }

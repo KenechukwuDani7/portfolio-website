@@ -124,10 +124,24 @@
 .osuko-outcome blockquote { max-width: 1050px; margin: 55px 0 48px; font-family: var(--font-serif), serif; font-size: clamp(3.2rem, 6.3vw, 6.4rem); font-style: italic; letter-spacing: -.05em; line-height: 1; }
 .osuko-outcome > p:last-of-type { max-width: 720px; margin-left: auto; color: #68625b; font-size: 1.02rem; line-height: 1.8; }
 .osuko-outcome > a { display: inline-flex; margin-top: 65px; padding: 18px 22px; background: var(--osuko-red); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
-.osuko-footer { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: end; padding-block: 90px 45px; border-top: 1px solid rgba(18,17,15,.22); }
-.osuko-footer p { grid-column: 1 / -1; margin: 0; color: #7c766e; font-size: .62rem; letter-spacing: .11em; text-transform: uppercase; }
-.osuko-footer > a:first-of-type { font-size: clamp(2.6rem, 5vw, 5.1rem); font-weight: 550; letter-spacing: -.06em; }
-.osuko-footer > a:last-child { padding-bottom: 10px; color: #6d675f; font-size: .78rem; }
+.osuko-footer {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+  padding: 76px 64px 56px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--osuko-red);
+  color: #fff8ee;
+}
+.osuko-footer::after { content: "OSUKO"; position: absolute; z-index: -1; right: -18px; bottom: -42px; color: rgba(255,255,255,.055); font-size: clamp(7rem, 17vw, 14rem); font-weight: 800; letter-spacing: -.09em; line-height: 1; }
+.osuko-footer p { grid-column: 1 / -1; margin: 0; color: #efb5a7; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; }
+.osuko-footer > a:first-of-type { position: relative; z-index: 1; font-size: clamp(2.6rem, 5vw, 5.1rem); font-weight: 550; letter-spacing: -.06em; }
+.osuko-footer > a:last-child { position: relative; z-index: 1; padding: 13px 17px; border: 1px solid rgba(255,248,238,.35); color: #fff8ee; font-size: .72rem; }
 
 @media (max-width: 980px) {
   .osuko-hero-copy { grid-template-columns: 1fr; }
@@ -174,8 +188,10 @@
   .osuko-chapter:hover figure img { transform: none; }
   .osuko-build, .osuko-outcome { padding-block: 110px; }
   .osuko-outcome blockquote { font-size: 3.05rem; }
-  .osuko-footer { grid-template-columns: 1fr; }
-  .osuko-footer > a:first-of-type { font-size: 2.4rem; }
+  .osuko-footer { grid-template-columns: 1fr; gap: 28px; padding: 58px 24px 28px; }
+  .osuko-footer::after { right: -12px; bottom: -20px; font-size: 6.5rem; }
+  .osuko-footer > a:first-of-type { font-size: clamp(2.05rem, 10.5vw, 2.4rem); }
+  .osuko-footer > a:last-child { justify-self: start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

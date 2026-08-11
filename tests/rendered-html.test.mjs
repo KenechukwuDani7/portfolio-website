@@ -106,6 +106,8 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(css, /@media \(max-width: 420px\)/);
   assert.match(css, /@media \(max-width: 350px\)/);
   assert.match(css, /@media \(pointer: coarse\)/);
+  assert.match(css, /footer#contact\s*\{/);
+  assert.doesNotMatch(css, /(?:^|\n)footer\s*\{\s*background:/);
   assert.match(css, /overflow-x:\s*(?:hidden|clip)/);
   assert.match(css, /font-size:\s*clamp\(2\.9rem, 17vw, 4\.35rem\)/);
   assert.match(motion, /window\.innerWidth > 768/);
