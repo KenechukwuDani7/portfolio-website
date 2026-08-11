@@ -72,12 +72,22 @@ const projects = [
 ];
 
 const tools = [
-  { name: "Figma", logo: "/tools/figma.png", use: "Flows, wireframes, UI systems & prototypes" },
+  { name: "Figma", logo: "/tools/brands/figma.svg", use: "Flows, wireframes, UI systems & prototypes" },
   { name: "ChatGPT", logo: "/tools/chatgpt.png", use: "Research synthesis, ideation & AI workflows" },
-  { name: "Claude", logo: "/tools/claude.png", use: "Product thinking, writing & code collaboration" },
-  { name: "Canva", logo: "/tools/canva.jfif", use: "Fast visual communication & presentations" },
-  { name: "VS Code", logo: "/tools/vscode.png", use: "Front-end development, testing & debugging" },
-  { name: "GitHub", logo: "/tools/github.png", use: "Version control & product collaboration" },
+  { name: "Claude", logo: "/tools/brands/claude.svg", use: "Product thinking, writing & code collaboration" },
+  { name: "Canva", logo: "/tools/brands/canva.svg", use: "Fast visual communication & presentations" },
+  { name: "VS Code", logo: "/tools/brands/vscode.svg", use: "Front-end development, testing & debugging" },
+  { name: "GitHub", logo: "/tools/brands/github.svg", use: "Version control & product collaboration" },
+];
+
+const technologies = [
+  { name: "HTML5", logo: "/tools/brands/html5.svg", use: "Semantic structure" },
+  { name: "CSS", logo: "/tools/brands/css.svg", use: "Responsive visual systems" },
+  { name: "TypeScript", logo: "/tools/brands/typescript.svg", use: "Typed product code" },
+  { name: "React", logo: "/tools/brands/react.svg", use: "Component interfaces" },
+  { name: "Expo", logo: "/tools/brands/expo.svg", use: "Cross-platform mobile apps" },
+  { name: "Next.js", logo: "/tools/brands/nextjs.svg", use: "Production web applications" },
+  { name: "Vercel", logo: "/tools/brands/vercel.svg", use: "Deployment & analytics" },
 ];
 
 const capabilities = [
@@ -303,10 +313,36 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="technology-stack reveal">
+            <div className="technology-heading">
+              <div>
+                <p className="eyebrow">Build & delivery stack</p>
+                <h3>Technologies I use to make the work real.</h3>
+              </div>
+              <p>
+                From semantic web foundations to cross-platform mobile apps,
+                component systems and production deployment.
+              </p>
+            </div>
+            <div className="technology-grid">
+              {technologies.map((technology, index) => (
+                <article className="technology-card" key={technology.name}>
+                  <span>0{index + 1}</span>
+                  <div className="technology-mark">
+                    <img src={technology.logo} alt={`${technology.name} logo`} loading="lazy" decoding="async" />
+                  </div>
+                  <div>
+                    <h4>{technology.name}</h4>
+                    <p>{technology.use}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
         <div className="tool-marquee" aria-hidden="true">
-          <span>FIGMA — CHATGPT — CLAUDE — CANVA — VS CODE — GITHUB — </span>
-          <span>FIGMA — CHATGPT — CLAUDE — CANVA — VS CODE — GITHUB — </span>
+          <span>FIGMA — CHATGPT — CLAUDE — REACT — EXPO — TYPESCRIPT — NEXT.JS — VERCEL — </span>
+          <span>FIGMA — CHATGPT — CLAUDE — REACT — EXPO — TYPESCRIPT — NEXT.JS — VERCEL — </span>
         </div>
       </section>
 

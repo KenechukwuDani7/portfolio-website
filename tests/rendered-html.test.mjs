@@ -42,6 +42,11 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Products shaped from/);
   assert.doesNotMatch(html, /Sabian Pay/);
   assert.match(html, /Tools I use/);
+  assert.match(html, /Build &amp; delivery stack/);
+  assert.match(html, /React/);
+  assert.match(html, /Expo/);
+  assert.match(html, /TypeScript/);
+  assert.match(html, /Vercel/);
   assert.match(html, /keneochine@gmail\.com/);
   assert.match(
     html,
