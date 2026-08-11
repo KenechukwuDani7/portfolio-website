@@ -179,7 +179,7 @@
   .reflection blockquote { font-size: 3rem; }
   .mentra-footer { grid-template-columns: 1fr; gap: 28px; padding: 58px 24px 28px; border-radius: 20px; }
   .mentra-footer::after { right: -45%; bottom: -48%; width: 300px; }
-  .mentra-footer > a:not(.all-work) { font-size: clamp(1.72rem, 8vw, 2.05rem); word-break: break-word; }
+  .mentra-footer > a:not(.all-work) { font-size: clamp(1.22rem, 5.6vw, 1.62rem); letter-spacing: -.04em; white-space: nowrap; word-break: normal; }
   .all-work { justify-self: start; }
 }
 
