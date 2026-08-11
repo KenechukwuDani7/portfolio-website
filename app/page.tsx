@@ -281,11 +281,6 @@ export default function Home() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
-                {project.href ? (
-                  <a className="project-case-link magnetic" href={project.href}>
-                    View case study <span aria-hidden="true">↗</span>
-                  </a>
-                ) : null}
               </div>
               <div className="project-detail">
                 <div>

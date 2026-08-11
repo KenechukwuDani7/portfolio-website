@@ -141,11 +141,15 @@ test("keeps the mobile hero name intact and serves the GitHub footer mark", asyn
 });
 
 test("makes project artwork an accessible case-study link", async () => {
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const [pageSource, css] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
 
   assert.match(css, /\.project-visual-link\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/s);
   assert.match(css, /\.project-visual-link:focus-visible/);
   assert.match(css, /\.project-visual-link\s*>\s*span\s*\{[^}]*background:\s*rgba\(255,255,255,\.94\)/s);
+  assert.doesNotMatch(pageSource, /project-case-link/);
 });
 
 test("publishes search-engine discovery files", async () => {

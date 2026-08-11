@@ -529,23 +529,6 @@ em { font-family: var(--font-serif), Georgia, serif; font-weight: 500; }
   color: #929292;
   line-height: 1.65;
 }
-.project-case-link {
-  grid-column: 2;
-  justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 2px;
-  padding: 13px 18px;
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  color: #f4f4f2;
-  font-size: .7rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  transition: color .25s, background .25s, border-color .25s;
-}
-.project-case-link:hover { color: #050505; background: #f4f4f2; border-color: #f4f4f2; }
 .tags { display: flex; flex-direction: column; gap: 7px; align-items: flex-start; }
 .tags span, .skill-list span {
   border: 1px solid var(--line);
@@ -965,7 +948,6 @@ footer#contact .eyebrow { color: #555; }
   .capability h3 { margin-top: 70px; }
   .project-visual { min-height: 530px; }
   .project-info { grid-template-columns: 1fr; gap: 22px; }
-  .project-case-link { grid-column: 1; }
   .tags { flex-direction: row; flex-wrap: wrap; }
   .project-detail { padding-left: 0; }
   .tools-grid { grid-template-columns: 1fr 1fr; }
