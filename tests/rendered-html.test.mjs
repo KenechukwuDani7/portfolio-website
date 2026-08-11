@@ -149,6 +149,8 @@ test("makes project artwork an accessible case-study link", async () => {
   assert.match(css, /\.project-visual-link\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/s);
   assert.match(css, /\.project-visual-link:focus-visible/);
   assert.match(css, /\.project-visual-link\s*>\s*span\s*\{[^}]*background:\s*rgba\(255,255,255,\.94\)/s);
+  assert.match(css, /@media \(max-width: 600px\)[\s\S]*?\.project-visual-link\s*\{[^}]*align-items:\s*flex-start[^}]*justify-content:\s*flex-end/s);
+  assert.match(css, /font-size:\s*\.52rem/);
   assert.doesNotMatch(pageSource, /project-case-link/);
 });
 

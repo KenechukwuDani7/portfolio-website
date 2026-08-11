@@ -989,9 +989,21 @@ footer#contact .eyebrow { color: #555; }
   .capability { padding: 24px; }
   .projects { gap: 120px; }
   .project-visual { min-height: clamp(320px, 106vw, 390px); }
-  .project-visual-link { padding: 15px; }
-  .project-visual-link > span { gap: 12px; padding: 11px 12px 11px 16px; font-size: .58rem; }
-  .project-visual-link b { width: 24px; height: 24px; }
+  .project-visual-link {
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 15px;
+  }
+  .project-visual-link::before {
+    background: linear-gradient(180deg, rgba(0,0,0,.34), transparent 42%, rgba(0,0,0,.2));
+  }
+  .project-visual-link > span {
+    gap: 9px;
+    padding: 9px 10px 9px 13px;
+    font-size: .52rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,.34);
+  }
+  .project-visual-link b { width: 22px; height: 22px; font-size: .72rem; }
   .project-mentra img { width: 190px; }
   .project-wide img { width: 94%; }
   .project-info h3 { font-size: 2.6rem; }
