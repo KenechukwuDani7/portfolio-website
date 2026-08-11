@@ -1,0 +1,16 @@
+# Local build output and caches
+.next
+.vinext
+.wrangler
+dist
+node_modules
+
+# Workspace-only material that is not part of the portfolio
+job-application-tracker.md
+output
+tmp
+
+# Local project metadata
+.agents
+.codex
+.openai
