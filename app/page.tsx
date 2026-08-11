@@ -564,7 +564,7 @@ export default function Home() {
               aria-label="Kenechukwu Okoye on GitHub"
             >
               <span className="social-logo github-logo" aria-hidden="true">
-                <img src="/tools/github.png" alt="" />
+                <img src="/tools/brands/github.svg" alt="" />
               </span>
               <span>
                 <small>Code & projects</small>

@@ -114,7 +114,7 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(css, /footer#contact\s*\{/);
   assert.doesNotMatch(css, /(?:^|\n)footer\s*\{\s*background:/);
   assert.match(css, /overflow-x:\s*(?:hidden|clip)/);
-  assert.match(css, /font-size:\s*clamp\(2\.9rem, 17vw, 4\.35rem\)/);
+  assert.match(css, /font-size:\s*clamp\(2\.9rem, 14\.4vw, 4\.35rem\)/);
   assert.match(motion, /window\.innerWidth > 768/);
   assert.match(motion, /\(pointer: fine\)/);
   assert.match(page, /kenechukwu-okoye-chine-0a3918413/);
@@ -124,6 +124,16 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(layout, /alternateName/);
   assert.match(layout, /familyName: "Okoye-Chine"/);
   assert.match(layout, /<Analytics \/>/);
+});
+
+test("keeps the mobile hero name intact and serves the GitHub footer mark", async () => {
+  const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(pageSource, /\/tools\/brands\/github\.svg/);
+  assert.doesNotMatch(pageSource, /\/tools\/github\.png/);
+  assert.match(css, /\.hero-name-row\s*\{[^}]*white-space:\s*nowrap/s);
+  assert.match(css, /\.github-logo img\s*\{[^}]*filter:\s*invert\(1\)/s);
 });
 
 test("publishes search-engine discovery files", async () => {
