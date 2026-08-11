@@ -19,8 +19,25 @@ const projects = [
     tags: ["Product strategy", "UX/UI", "AI product"],
   },
   {
-    title: "Sabian Pay",
+    title: "OSUKO Construction",
     index: "02",
+    type: "Construction Company Website",
+    year: "2026",
+    image: "/work/osuko/hero-desktop.png",
+    href: "/work/osuko",
+    className: "project-wide project-osuko",
+    description:
+      "A confident, responsive company website that turns OSUKO’s standards, services and project process into a clear path from first impression to enquiry.",
+    challenge:
+      "A growing construction company needed a credible digital presence that could communicate capability and care without feeling like a generic contractor template.",
+    contribution:
+      "I shaped the information architecture, visual direction, responsive experience and front-end delivery, connecting brand storytelling to a useful project enquiry flow.",
+    intersection: "Brand expression × Web development",
+    tags: ["Web design", "Next.js", "Responsive UX"],
+  },
+  {
+    title: "Sabian Pay",
+    index: "03",
     type: "Digital Payments",
     year: "2025",
     image: "/work/sabian-pay.png",
@@ -37,7 +54,7 @@ const projects = [
   },
   {
     title: "Golden Bills",
-    index: "03",
+    index: "04",
     type: "Digital Payments",
     year: "2025",
     image: "/work/golden-bills.png",
@@ -54,7 +71,7 @@ const projects = [
   },
   {
     title: "Chow Now",
-    index: "04",
+    index: "05",
     type: "Food Ordering App",
     year: "2025",
     image: "/work/chow-now.png",

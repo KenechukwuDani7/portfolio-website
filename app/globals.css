@@ -414,6 +414,8 @@ em { font-family: var(--font-serif), Georgia, serif; font-weight: 500; }
   box-shadow: 0 35px 80px rgba(0,0,0,.55);
 }
 .project-gold { background: radial-gradient(circle at var(--glow-x) var(--glow-y), #5f5f5f, #171717 60%, #050505); }
+.project-osuko { background: radial-gradient(circle at var(--glow-x) var(--glow-y), #49302b, #171313 56%, #070606); }
+.project-osuko img { border: 1px solid rgba(255,255,255,.09); }
 .project-chow img { width: 92%; }
 .project-number {
   position: absolute;
