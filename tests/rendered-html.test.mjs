@@ -40,6 +40,7 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Kenechukwu Okoye-Chine/);
   assert.match(html, /Koda the Great/);
   assert.match(html, /Products shaped from/);
+  assert.doesNotMatch(html, /Sabian Pay/);
   assert.match(html, /Tools I use/);
   assert.match(html, /keneochine@gmail\.com/);
   assert.match(
@@ -78,6 +79,20 @@ test("server-renders the OSUKO Construction case study", async () => {
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/osuko"/i);
 });
 
+test("server-renders the Golden Bills case study", async () => {
+  const response = await render("/work/golden-bills");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Golden Bills Fintech Case Study \| Kenechukwu Okoye-Chine<\/title>/i);
+  assert.match(html, /Everyday payments, organised into one/i);
+  assert.match(html, /dependable system/i);
+  assert.match(html, /\/work\/golden-bills\/dashboard\.webp/i);
+  assert.match(html, /\/work\/golden-bills\/transactions\.webp/i);
+  assert.doesNotMatch(html, /Visit live website/i);
+  assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/golden-bills"/i);
+});
+
 test("keeps the portfolio responsive and touch-friendly", async () => {
   const [css, motion, page, layout] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -113,6 +128,7 @@ test("publishes search-engine discovery files", async () => {
   assert.match(sitemap, /kenechukwuokoye\.vercel\.app/);
   assert.match(sitemap, /work\/mentra/);
   assert.match(sitemap, /work\/osuko/);
+  assert.match(sitemap, /work\/golden-bills/);
   assert.match(robots, /sitemap\.xml/);
   assert.match(robots, /allow: "\/"/);
 });

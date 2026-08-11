@@ -36,42 +36,25 @@ const projects = [
     tags: ["Web design", "Next.js", "Responsive UX"],
   },
   {
-    title: "Sabian Pay",
+    title: "Golden Bills",
     index: "03",
-    type: "Digital Payments",
+    type: "Bills & Payments Platform",
     year: "2025",
-    image: "/work/sabian-pay.png",
-    href: null,
-    className: "project-wide",
+    image: "/work/golden-bills/dashboard.webp",
+    href: "/work/golden-bills",
+    className: "project-wide project-gold",
     description:
-      "A focused fintech experience for funding wallets, paying bills, buying airtime and keeping everyday transactions easy to understand.",
+      "A focused fintech dashboard for funding a wallet, paying utilities, buying airtime and data, and tracking every transaction in one place.",
     challenge:
-      "Multiple payment services, balances and transaction states needed to feel like one simple, dependable system.",
+      "Several payment services, form requirements and transaction states needed to feel like one predictable and trustworthy system.",
     contribution:
-      "I designed the dashboard hierarchy, transaction patterns and reusable service components for a scalable web experience.",
-    intersection: "Systems thinking × Interface design",
+      "I designed the dashboard hierarchy, reusable service patterns, payment forms, status feedback and account experience.",
+    intersection: "Fintech UX × Interface systems",
     tags: ["Product design", "Fintech", "Dashboard"],
   },
   {
-    title: "Golden Bills",
-    index: "04",
-    type: "Digital Payments",
-    year: "2025",
-    image: "/work/golden-bills.png",
-    href: null,
-    className: "project-wide project-gold",
-    description:
-      "A warmer visual direction for the payments system, designed to make routine digital services feel clear and approachable.",
-    challenge:
-      "The same functional foundation needed a distinct visual personality without losing usability or trust.",
-    contribution:
-      "I evolved the colour, presentation and component styling while preserving the underlying service and transaction logic.",
-    intersection: "Visual systems × Product consistency",
-    tags: ["Visual design", "UX/UI", "Web app"],
-  },
-  {
     title: "Chow Now",
-    index: "05",
+    index: "04",
     type: "Food Ordering App",
     year: "2025",
     image: "/work/chow-now.png",
