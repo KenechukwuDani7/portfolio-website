@@ -254,6 +254,17 @@ export default function Home() {
                   loading="lazy"
                   decoding="async"
                 />
+                {project.href ? (
+                  <a
+                    className="project-visual-link"
+                    href={project.href}
+                    aria-label={`View ${project.title} case study`}
+                  >
+                    <span>
+                      View case study <b aria-hidden="true">↗</b>
+                    </span>
+                  </a>
+                ) : null}
                 <div className="glass-label">
                   <span>{project.type}</span>
                   <b>{project.year}</b>

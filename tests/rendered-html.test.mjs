@@ -40,6 +40,10 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Kenechukwu Okoye-Chine/);
   assert.match(html, /Koda the Great/);
   assert.match(html, /Products shaped from/);
+  assert.match(html, /aria-label="View Mentra case study"/);
+  assert.match(html, /aria-label="View OSUKO Construction case study"/);
+  assert.match(html, /aria-label="View Golden Bills case study"/);
+  assert.doesNotMatch(html, /aria-label="View Chow Now case study"/);
   assert.doesNotMatch(html, /Sabian Pay/);
   assert.match(html, /Tools I use/);
   assert.match(html, /Build &amp; delivery stack/);
@@ -134,6 +138,14 @@ test("keeps the mobile hero name intact and serves the GitHub footer mark", asyn
   assert.doesNotMatch(pageSource, /\/tools\/github\.png/);
   assert.match(css, /\.hero-name-row\s*\{[^}]*white-space:\s*nowrap/s);
   assert.match(css, /\.github-logo img\s*\{[^}]*filter:\s*invert\(1\)/s);
+});
+
+test("makes project artwork an accessible case-study link", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(css, /\.project-visual-link\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/s);
+  assert.match(css, /\.project-visual-link:focus-visible/);
+  assert.match(css, /\.project-visual-link\s*>\s*span\s*\{[^}]*background:\s*rgba\(255,255,255,\.94\)/s);
 });
 
 test("publishes search-engine discovery files", async () => {
