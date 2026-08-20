@@ -466,12 +466,6 @@ em { font-family: var(--font-serif), Georgia, serif; font-weight: 500; }
   box-shadow: 0 0 0 4px rgba(255,255,255,.28), 0 18px 52px rgba(0,0,0,.48);
 }
 .project:hover .project-visual img { transform: scale(1.035); filter: saturate(1) contrast(1.02); }
-.project-mentra img {
-  width: 290px;
-  max-height: 78%;
-  border-radius: 28px;
-  box-shadow: 0 35px 80px rgba(0,0,0,.7);
-}
 .project-wide img {
   width: min(88%, 1120px);
   border-radius: 5px;
@@ -480,6 +474,8 @@ em { font-family: var(--font-serif), Georgia, serif; font-weight: 500; }
 .project-gold { background: radial-gradient(circle at var(--glow-x) var(--glow-y), #5f5f5f, #171717 60%, #050505); }
 .project-osuko { background: radial-gradient(circle at var(--glow-x) var(--glow-y), #49302b, #171313 56%, #070606); }
 .project-osuko img { border: 1px solid rgba(255,255,255,.09); }
+.project-mentra-web { background: radial-gradient(circle at var(--glow-x) var(--glow-y), #456daf, #141c2d 58%, #05070b); }
+.project-mentra-web img { border: 1px solid rgba(255,255,255,.12); }
 .project-chow img { width: 92%; }
 .project-number {
   position: absolute;
@@ -1004,7 +1000,6 @@ footer#contact .eyebrow { color: #555; }
     box-shadow: 0 10px 30px rgba(0,0,0,.34);
   }
   .project-visual-link b { width: 22px; height: 22px; font-size: .72rem; }
-  .project-mentra img { width: 190px; }
   .project-wide img { width: 94%; }
   .project-info h3 { font-size: 2.6rem; }
   .glass-label { right: 12px; bottom: 12px; max-width: calc(100% - 24px); gap: 18px; }
@@ -1065,7 +1060,6 @@ footer#contact .eyebrow { color: #555; }
   .section-heading { margin-bottom: 58px; }
   .project-number { top: 16px; left: 17px; }
   .project-visual { border-radius: 4px; }
-  .project-mentra img { width: min(170px, 58%); border-radius: 20px; }
   .glass-label { padding: 12px 14px; font-size: .55rem; }
   .project-info h3 { font-size: 2.3rem; }
   .project-detail > div { grid-template-columns: 1fr; gap: 8px; }

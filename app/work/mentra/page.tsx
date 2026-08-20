@@ -2,77 +2,68 @@ import type { Metadata } from "next";
 import "./mentra.css";
 
 const SITE_URL = "https://kenechukwuokoye.vercel.app";
+const MENTRA_URL = "https://learnwithmentra.vercel.app/";
 
 export const metadata: Metadata = {
-  title: "Mentra AI Case Study | Kenechukwu Okoye-Chine",
+  title: "Mentra AI Learning Platform Case Study | Kenechukwu Okoye-Chine",
   description:
-    "A product design and mobile development case study for Mentra, an AI study companion that turns course materials into answers, practice and structured study plans.",
+    "An extensive product design and software development case study for Mentra, a Groq-powered AI learning platform built with Expo, React Native, TypeScript and Supabase.",
   alternates: { canonical: "/work/mentra" },
   openGraph: {
-    title: "Mentra AI Case Study | Kenechukwu Okoye-Chine",
+    title: "Mentra AI Learning Platform Case Study | Kenechukwu Okoye-Chine",
     description:
-      "How Mentra brings AI tutoring, study materials, practice and planning into one focused mobile experience.",
+      "How Mentra turns uploaded study materials into grounded answers, summaries, flashcards, quizzes and focused study plans.",
     url: `${SITE_URL}/work/mentra`,
     type: "article",
-    images: [{ url: "/work/mentra/home.jpg", alt: "Mentra AI mobile app home screen" }],
+    images: [{ url: "/work/mentra/website-cover.png", alt: "Mentra AI website homepage" }],
   },
 };
 
-const chapters = [
+const productCapabilities = [
   {
     number: "01",
-    kicker: "A tutor in the flow",
-    title: "Ask, understand, keep moving.",
-    text: "Ask Mentra gives students a calm place to work through an academic question without leaving the material they are studying. The conversational layer is intentionally direct: a clear status, focused responses and one persistent composer keep the next action obvious.",
-    image: "/work/mentra/ai-tutor.png",
-    alt: "Ask Mentra AI tutor conversation",
-    note: "AI tutoring · Contextual answers · Attachment input",
+    title: "Grounded tutoring",
+    text: "Students can ask about an academic topic or select an uploaded material. Mentra retrieves relevant passages and returns a clear explanation with citations back to the source.",
   },
   {
     number: "02",
-    kicker: "One source of truth",
-    title: "Materials become a working library.",
-    text: "Uploaded files are organised by subject and recency, turning scattered PDFs and notes into a study-ready collection. The library is more than storage: it is the starting point for generated explanations, flashcards and quizzes.",
-    image: "/work/mentra/library.jpg",
-    alt: "Mentra study material library",
-    note: "File upload · Subject filters · Material management",
+    title: "Material intelligence",
+    text: "PDFs, Word documents, slides, spreadsheets, notes and images become summaries, key points and revision-ready study tools instead of sitting unread in a folder.",
   },
   {
     number: "03",
-    kicker: "Active recall",
-    title: "Practice adapts to the task.",
-    text: "Students can generate a 30-question quiz from their own files or solve a question from text, calculations or a photo. The screen separates the two jobs clearly, while practice history makes progress feel continuous instead of disposable.",
-    image: "/work/mentra/practice.jpg",
-    alt: "Mentra quiz and question-solving practice screen",
-    note: "AI quizzes · Multimodal solver · Practice history",
+    title: "Active practice",
+    text: "The same material can generate flashcards and varied quizzes, while the solver works through typed or photographed maths and science problems step by step.",
   },
   {
     number: "04",
-    kicker: "From intention to routine",
-    title: "A plan that closes the loop.",
-    text: "The planner connects learning content to time. Students can schedule study sessions, revision and exam reminders, scan the week at a glance and return to completed work—helping Mentra support the habit around studying, not only the moment of answering.",
-    image: "/work/mentra/planner.jpg",
-    alt: "Mentra study planner and reminder schedule",
-    note: "Study planning · Local reminders · Weekly view",
-  },
-  {
-    number: "05",
-    kicker: "Personal by default",
-    title: "The product follows the learner.",
-    text: "Appearance, language, profile and privacy controls live in one legible settings model. Device-aware theming and a dedicated privacy area give students control without turning personalisation into another complicated task.",
-    image: "/work/mentra/settings.jpg",
-    alt: "Mentra settings, language and privacy controls",
-    note: "Dark mode · Language · Privacy controls",
+    title: "Study continuity",
+    text: "A personal library, reading progress, practice history, study plans and local reminders connect one AI response to the learner’s next useful action.",
   },
 ];
 
-const stack = [
-  ["Product & interface", "Figma, component systems, responsive mobile prototyping"],
-  ["Mobile build", "Expo / React Native with TypeScript"],
-  ["Intelligence", "AI model API, prompt design and contextual response flows"],
-  ["Inputs", "Document upload, file parsing and image-based questions"],
-  ["Engagement", "Study schedules and local notification reminders"],
-  ["Delivery", "VS Code, GitHub and iterative device testing"],
+const architecture = [
+  ["Client", "Expo 54, React Native 0.81, React 19 and TypeScript 5.9"],
+  ["Interface", "Responsive native screens, React Native Web, design tokens and accessible loading states"],
+  ["Data", "Supabase Auth, Postgres, private Storage and row-level access policies"],
+  ["AI layer", "Protected Supabase Edge Function with Groq chat completions and structured outputs"],
+  ["Document pipeline", "File upload, text extraction, relevant-passage retrieval and source citations"],
+  ["Device services", "Document and image pickers, PDF reading, AsyncStorage and local notifications"],
+  ["Web launch", "Responsive marketing experience deployed on Vercel"],
+  ["Delivery", "GitHub, VS Code, Expo/EAS workflows, type checking and device testing"],
+];
+
+const technologies = [
+  "TypeScript",
+  "React",
+  "React Native",
+  "Expo",
+  "Supabase",
+  "PostgreSQL",
+  "Supabase Edge Functions",
+  "Groq API",
+  "React Native Web",
+  "Vercel",
 ];
 
 export default function MentraCaseStudy() {
@@ -81,15 +72,15 @@ export default function MentraCaseStudy() {
     "@type": "SoftwareApplication",
     name: "Mentra AI",
     applicationCategory: "EducationalApplication",
-    operatingSystem: "Mobile",
+    operatingSystem: "Android, iOS and Web",
     creator: {
       "@type": "Person",
       name: "Kenechukwu Okoye-Chine",
       url: SITE_URL,
     },
     description:
-      "An AI study companion for tutoring, material organisation, active practice and study planning.",
-    url: `${SITE_URL}/work/mentra`,
+      "A Groq-powered AI study companion that turns learning materials into grounded answers, summaries, flashcards, quizzes and focused plans.",
+    url: MENTRA_URL,
   };
 
   return (
@@ -104,84 +95,138 @@ export default function MentraCaseStudy() {
           KO<span>®</span>
         </a>
         <span>Mentra / Case study</span>
-        <a className="back-link" href="/#work">Back to work ↗</a>
+        <div className="mentra-nav-actions">
+          <a href="/#work">All work</a>
+          <a className="nav-live" href={MENTRA_URL} target="_blank" rel="noreferrer">
+            Visit Mentra ↗
+          </a>
+        </div>
       </nav>
 
       <header className="mentra-hero">
         <div className="hero-copy">
-          <p className="case-eyebrow">AI learning · Product design + mobile development · 2026</p>
-          <h1>A study system that turns course material into <em>momentum.</em></h1>
+          <p className="case-eyebrow">AI learning platform · Product design + software development · 2026</p>
+          <h1>From uploaded material to <em>real learning progress.</em></h1>
           <p className="hero-lead">
-            Mentra brings an AI tutor, personal study library, active practice and planning into one
-            focused mobile experience—so students can move from “I have the material” to “I know what
-            to do next.”
+            Mentra is an AI study companion built for African learners from primary school through
+            university. It brings files, grounded tutoring, summaries, practice and planning into one
+            connected learning system.
           </p>
-          <div className="hero-facts" aria-label="Project overview">
-            <div><span>Role</span><strong>Product design + development</strong></div>
-            <div><span>Focus</span><strong>AI-assisted learning</strong></div>
-            <div><span>Platform</span><strong>Mobile application</strong></div>
+          <div className="hero-actions">
+            <a className="primary-action" href={MENTRA_URL} target="_blank" rel="noreferrer">
+              Explore Mentra <span aria-hidden="true">↗</span>
+            </a>
+            <a className="secondary-action" href="#case-overview">Read the case study ↓</a>
           </div>
         </div>
-        <div className="hero-device">
-          <div className="device-glow" aria-hidden="true" />
-          <img src="/work/mentra/home.jpg" alt="Mentra AI home dashboard" />
-          <span className="screen-label">Home / Learning dashboard</span>
+
+        <a className="hero-cover" href={MENTRA_URL} target="_blank" rel="noreferrer" aria-label="Open the Mentra website">
+          <img src="/work/mentra/website-cover.png" alt="Mentra website homepage showing its AI study platform" />
+          <span>Live product · learnwithmentra.vercel.app ↗</span>
+        </a>
+
+        <div className="hero-facts" aria-label="Project overview">
+          <div><span>My role</span><strong>Product designer + developer</strong></div>
+          <div><span>Product</span><strong>AI learning companion</strong></div>
+          <div><span>Platforms</span><strong>Mobile + responsive web</strong></div>
+          <div><span>Core intelligence</span><strong>Groq + grounded retrieval</strong></div>
         </div>
       </header>
 
-      <section className="case-intro">
-        <p className="case-eyebrow">The product idea / 01</p>
+      <section className="case-overview" id="case-overview">
+        <p className="case-eyebrow">The opportunity / 01</p>
         <div>
-          <h2>Studying is not one task. Mentra connects the whole loop.</h2>
+          <h2>Students already have content. The harder problem is turning it into a useful study rhythm.</h2>
           <p>
-            Students often switch between files, chat tools, calendars and practice apps. That
-            fragmentation makes it harder to begin and easier to lose context. I shaped Mentra as one
-            continuous loop: bring in a material, understand it, practise it, then plan the next session.
+            Learning often happens across disconnected tools: files in one place, generic AI chat in
+            another, practice somewhere else and reminders in a calendar. That fragmentation costs time,
+            loses context and makes the next step unclear. I shaped Mentra around a single loop: add what
+            you are learning, understand it with AI, practise it actively, then return with a plan.
           </p>
         </div>
       </section>
 
-      <section className="principles" aria-label="Mentra product principles">
-        <article><span>01</span><h3>Clarity first</h3><p>Every screen prioritises one primary action and keeps supporting choices close.</p></article>
-        <article><span>02</span><h3>Context stays connected</h3><p>Materials feed the tutor and practice tools instead of living in a separate archive.</p></article>
-        <article><span>03</span><h3>Progress needs a next step</h3><p>History, planning and reminders turn isolated AI answers into a repeatable learning habit.</p></article>
-      </section>
-
-      <section className="feature-story" aria-label="Mentra feature walkthrough">
-        <div className="story-heading">
-          <p className="case-eyebrow">Experience walkthrough / 02</p>
-          <h2>Six screens. One connected learning rhythm.</h2>
+      <section className="capability-section" aria-label="Mentra product capabilities">
+        <div className="section-heading">
+          <p className="case-eyebrow">Product system / 02</p>
+          <h2>One learning system, not a collection of AI features.</h2>
         </div>
-        {chapters.map((chapter, index) => (
-          <article className={`story-row ${index % 2 ? "reverse" : ""}`} key={chapter.number}>
-            <div className="story-copy">
-              <span className="story-number">{chapter.number}</span>
-              <p className="story-kicker">{chapter.kicker}</p>
-              <h3>{chapter.title}</h3>
-              <p>{chapter.text}</p>
-              <small>{chapter.note}</small>
-            </div>
-            <div className="story-screen">
-              <img src={chapter.image} alt={chapter.alt} loading="lazy" />
-            </div>
-          </article>
-        ))}
+        <div className="capability-grid">
+          {productCapabilities.map((capability) => (
+            <article key={capability.number}>
+              <span>{capability.number}</span>
+              <h3>{capability.title}</h3>
+              <p>{capability.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className="build-section">
-        <div className="build-heading">
-          <p className="case-eyebrow">How it was built / 03</p>
-          <h2>Design decisions translated into a working mobile product.</h2>
+      <section className="visual-story" aria-label="Mentra product walkthrough">
+        <article className="visual-chapter">
+          <div className="chapter-copy">
+            <p className="case-eyebrow">Product communication / 03</p>
+            <h2>The value is explained before the technology.</h2>
+            <p>
+              The public experience presents Mentra through the jobs learners recognise: getting a clear
+              answer, simplifying long materials, creating active-recall practice and seeing every step in
+              a solution. This keeps the product approachable even when the system underneath is complex.
+            </p>
+          </div>
+          <figure className="browser-shot">
+            <img src="/work/mentra/website-features.png" alt="Mentra website feature overview" loading="lazy" />
+            <figcaption>Current product capabilities on the Mentra website</figcaption>
+          </figure>
+        </article>
+
+        <article className="visual-chapter reverse">
+          <div className="chapter-copy">
+            <p className="case-eyebrow">Experience architecture / 04</p>
+            <h2>A three-step loop keeps the product understandable.</h2>
+            <p>
+              The experience moves from material to mastery: add a file or question, let Mentra create
+              useful study tools, then return through practice history, plans and reminders. Every feature
+              has a place in that loop, which prevents the app from feeling like an overloaded dashboard.
+            </p>
+          </div>
+          <figure className="browser-shot">
+            <img src="/work/mentra/website-workflow.png" alt="Mentra material-to-mastery workflow" loading="lazy" />
+            <figcaption>The core learner journey from upload to continued progress</figcaption>
+          </figure>
+        </article>
+
+        <article className="visual-chapter">
+          <div className="chapter-copy">
+            <p className="case-eyebrow">Grounded intelligence / 05</p>
+            <h2>Answers stay connected to what the student is actually studying.</h2>
+            <p>
+              For material-based questions, the backend verifies the learner, retrieves only their file,
+              extracts readable content, finds relevant passages and sends that context to Groq. The answer
+              points back to pages or sections so learners can verify explanations instead of trusting an
+              isolated response.
+            </p>
+          </div>
+          <figure className="browser-shot">
+            <img src="/work/mentra/website-grounded.png" alt="Mentra grounded answer and citation experience" loading="lazy" />
+            <figcaption>Relevant context, learner-level explanations and visible citations</figcaption>
+          </figure>
+        </article>
+      </section>
+
+      <section className="architecture-section">
+        <div className="architecture-intro">
+          <p className="case-eyebrow">How it was built / 06</p>
+          <h2>Product decisions carried through to production architecture.</h2>
           <p>
-            My computer science background helped me work across interaction design and implementation.
-            The stack supports a reusable mobile interface, AI-assisted study flows, flexible inputs and
-            the reminders that keep learning active beyond a single session.
+            Mentra is not a visual prototype. I worked across the interface, application logic, data model,
+            secure AI boundary and web launch. The architecture keeps model credentials out of the client,
+            protects private learning files and gives each AI workflow a typed, testable contract.
           </p>
         </div>
-        <div className="stack-list">
-          {stack.map(([title, detail], index) => (
+        <div className="architecture-list">
+          {architecture.map(([title, detail], index) => (
             <div key={title}>
-              <span>0{index + 1}</span>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{title}</strong>
               <p>{detail}</p>
             </div>
@@ -189,23 +234,65 @@ export default function MentraCaseStudy() {
         </div>
       </section>
 
+      <section className="technology-section">
+        <div>
+          <p className="case-eyebrow">Languages & tools / 07</p>
+          <h2>The stack behind Mentra.</h2>
+        </div>
+        <div className="technology-cloud">
+          {technologies.map((technology) => <span key={technology}>{technology}</span>)}
+        </div>
+      </section>
+
+      <section className="engineering-notes">
+        <p className="case-eyebrow">Important implementation choices / 08</p>
+        <div className="note-grid">
+          <article>
+            <span>01</span>
+            <h3>Private by design</h3>
+            <p>Supabase authentication, private file storage and row-level ownership rules keep one learner’s materials separate from another’s.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Secrets stay server-side</h3>
+            <p>The client calls a protected Edge Function. Groq credentials, document extraction and privileged storage access never ship inside the mobile app.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Built for real files</h3>
+            <p>The upload pipeline handles PDFs, Office files, text, spreadsheets and common images while avoiding memory-heavy base64 uploads on lower-end Android devices.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Useful failure states</h3>
+            <p>Loading, empty, validation and provider-limit states explain what happened and give the learner a clear next action instead of a generic error.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="reflection">
-        <p className="case-eyebrow">What this project demonstrates / 04</p>
-        <blockquote>
-          “The strongest AI experience is not the one with the most features. It is the one that makes
-          the user’s next useful action feel obvious.”
-        </blockquote>
+        <p className="case-eyebrow">What this project demonstrates / 09</p>
+        <blockquote>“AI becomes useful when product structure, trusted context and the next human action work together.”</blockquote>
         <p>
-          Mentra demonstrates how I connect product structure, interaction design, AI capability and
-          implementation thinking. The result is a learning system where each feature strengthens the
-          next—from material upload to understanding, practice and a sustainable study routine.
+          Mentra demonstrates how I combine product design and software development: defining a focused
+          learner journey, translating it into a reusable interface system, building secure data and AI
+          flows, and communicating the finished product through a responsive launch experience.
         </p>
       </section>
 
+      <section className="mentra-launch">
+        <p className="case-eyebrow">See the product</p>
+        <h2>Explore Mentra in action.</h2>
+        <p>Visit the product website to see the complete feature story and access the current Android build.</p>
+        <a href={MENTRA_URL} target="_blank" rel="noreferrer">Visit Mentra ↗</a>
+      </section>
+
       <footer className="mentra-footer">
-        <p>Want to discuss this product?</p>
-        <a href="mailto:keneochine@gmail.com">keneochine@gmail.com ↗</a>
-        <a className="all-work" href="/#work">Return to all work</a>
+        <div>
+          <p>Next step</p>
+          <a href="/#work">Return to selected work ↗</a>
+        </div>
+        <a href="mailto:keneochine@gmail.com">keneochine@gmail.com</a>
       </footer>
     </main>
   );

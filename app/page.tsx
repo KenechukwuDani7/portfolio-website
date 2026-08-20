@@ -4,19 +4,19 @@ const projects = [
   {
     title: "Mentra",
     index: "01",
-    type: "AI Study Assistant",
+    type: "AI Learning Platform",
     year: "2026",
-    image: "/work/mentra/home.jpg",
+    image: "/work/mentra/website-cover.png",
     href: "/work/mentra",
-    className: "project-mentra",
+    className: "project-wide project-mentra-web",
     description:
-      "An accessible AI learning companion that turns uploaded materials into clear answers, summaries, flashcards and practice tests.",
+      "A Groq-powered learning platform that turns uploaded materials into grounded answers, summaries, flashcards, quizzes and focused study plans.",
     challenge:
       "Students often have the material but not the structure, time or guidance needed to study it effectively.",
     contribution:
-      "I shaped the product architecture, core learning loops and interface direction, connecting AI capability to familiar study behaviours.",
-    intersection: "Product design × AI integration",
-    tags: ["Product strategy", "UX/UI", "AI product"],
+      "I shaped the product architecture, interface system, secure data and AI workflows, mobile application and responsive launch experience.",
+    intersection: "Product design × AI engineering",
+    tags: ["Product strategy", "Expo", "AI engineering"],
   },
   {
     title: "OSUKO Construction",

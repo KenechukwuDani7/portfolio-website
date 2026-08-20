@@ -65,12 +65,19 @@ test("server-renders the Mentra AI case study", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /<title>Mentra AI Case Study \| Kenechukwu Okoye-Chine<\/title>/i);
-  assert.match(html, /A study system that turns course material into/i);
-  assert.match(html, /momentum/i);
-  assert.match(html, /Ask Mentra/i);
-  assert.match(html, /Expo \/ React Native/i);
-  assert.match(html, /\/work\/mentra\/settings\.jpg/i);
+  assert.match(html, /<title>Mentra AI Learning Platform Case Study \| Kenechukwu Okoye-Chine<\/title>/i);
+  assert.match(html, /From uploaded material to/i);
+  assert.match(html, /real learning progress/i);
+  assert.match(html, /Grounded tutoring/i);
+  assert.match(html, /Expo 54, React Native 0\.81, React 19 and TypeScript 5\.9/i);
+  assert.match(html, /Supabase Edge Function/i);
+  assert.match(html, /Groq API/i);
+  assert.match(html, /https:\/\/learnwithmentra\.vercel\.app\//i);
+  assert.match(html, /\/work\/mentra\/website-cover\.png/i);
+  assert.match(html, /\/work\/mentra\/website-features\.png/i);
+  assert.match(html, /\/work\/mentra\/website-workflow\.png/i);
+  assert.match(html, /\/work\/mentra\/website-grounded\.png/i);
+  assert.doesNotMatch(html, /\/work\/mentra\/(?:home|library|practice|planner|settings|ai-tutor)\.(?:jpg|png)/i);
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/mentra"/i);
 });
 
