@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     locale: "en_NG",
     images: [
       {
-        url: "/og-v2.jpg",
+        url: "/og-v3.jpg",
         width: 1200,
         height: 630,
         alt: "Kenechukwu Okoye — Product Design, Software and AI",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-v2.jpg"],
+    images: ["/og-v3.jpg"],
   },
 };
 
