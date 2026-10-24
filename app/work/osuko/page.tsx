@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowDown, ArrowUpRight } from "../../Icons";
 import "./osuko.css";
 
 const SITE_URL = "https://kenechukwuokoye.vercel.app";
@@ -86,7 +87,7 @@ export default function OsukoCaseStudy() {
       <nav className="osuko-nav" aria-label="Case study navigation">
         <a className="osuko-mark" href="/" aria-label="Back to Kenechukwu Okoye portfolio">KO<span>®</span></a>
         <span>OSUKO / Case study</span>
-        <a className="osuko-back" href="/#work">Back to work ↗</a>
+        <a className="osuko-back" href="/#work">Back to work <ArrowUpRight /></a>
       </nav>
 
       <header className="osuko-hero">
@@ -99,8 +100,8 @@ export default function OsukoCaseStudy() {
             for prospective clients.
           </p>
           <div className="osuko-actions">
-            <a className="visit-button" href={PROJECT_URL} target="_blank" rel="noreferrer">Visit live website ↗</a>
-            <a href="#story">Explore the case study ↓</a>
+            <a className="visit-button" href={PROJECT_URL} target="_blank" rel="noreferrer">Visit live website <ArrowUpRight /></a>
+            <a href="#story">Explore the case study <ArrowDown /></a>
           </div>
         </div>
         <div className="osuko-hero-frame">
@@ -216,12 +217,12 @@ export default function OsukoCaseStudy() {
           a clear route from curiosity to contact. It demonstrates my ability to connect brand thinking,
           responsive product design and front-end implementation in one coherent delivery.
         </p>
-        <a href={PROJECT_URL} target="_blank" rel="noreferrer">Experience the live website ↗</a>
+        <a href={PROJECT_URL} target="_blank" rel="noreferrer">Experience the live website <ArrowUpRight /></a>
       </section>
 
       <footer className="osuko-footer">
         <p>Next project</p>
-        <a href="/#work">Explore all work ↗</a>
+        <a href="/#work">Explore all work <ArrowUpRight /></a>
         <a href="mailto:keneochine@gmail.com">keneochine@gmail.com</a>
       </footer>
     </main>

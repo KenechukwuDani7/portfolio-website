@@ -1,4 +1,5 @@
 import MotionLayer from "./MotionLayer";
+import { ArrowDown, ArrowDownRight, ArrowUp, ArrowUpRight, Sparkle } from "./Icons";
 
 const projects = [
   {
@@ -175,7 +176,7 @@ export default function Home() {
       <a className="contact-dock magnetic" href="mailto:keneochine@gmail.com">
         <span className="contact-dock-label">Email me</span>
         <strong>keneochine@gmail.com</strong>
-        <i aria-hidden="true">↗</i>
+        <i aria-hidden="true"><ArrowUpRight /></i>
       </a>
 
       <header className="hero shell" id="top">
@@ -199,13 +200,13 @@ export default function Home() {
           </p>
           <a href="#work" className="round-link magnetic" aria-label="See selected work">
             <span>Explore work</span>
-            <b aria-hidden="true">↘</b>
+            <b aria-hidden="true"><ArrowDownRight /></b>
           </a>
         </div>
         <div className="hero-meta reveal">
           <span>BSc Computer Science</span>
           <span>Designing for clarity, access and real-world use</span>
-          <span>Scroll to explore ↓</span>
+          <span>Scroll to explore <ArrowDown /></span>
         </div>
         <div className="orb orb-one" data-parallax="0.08" aria-hidden="true" />
         <div className="orb orb-two" data-parallax="-0.05" aria-hidden="true" />
@@ -213,9 +214,9 @@ export default function Home() {
 
       <section className="marquee" aria-label="Areas of expertise">
         <div>
-          Product Design <i>✦</i> User Experience <i>✦</i> AI Integration{" "}
-          <i>✦</i> Creative Development <i>✦</i> Prototyping <i>✦</i>
-          Design Systems <i>✦</i>
+          Product Design <i><Sparkle /></i> User Experience <i><Sparkle /></i> AI Integration{" "}
+          <i><Sparkle /></i> Creative Development <i><Sparkle /></i> Prototyping <i><Sparkle /></i>
+          Design Systems <i><Sparkle /></i>
         </div>
       </section>
 
@@ -239,7 +240,7 @@ export default function Home() {
               <span>{item.number}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <i aria-hidden="true">↗</i>
+              <i aria-hidden="true"><ArrowUpRight /></i>
             </article>
           ))}
         </div>
@@ -277,7 +278,7 @@ export default function Home() {
                     aria-label={`View ${project.title} case study`}
                   >
                     <span>
-                      View case study <b aria-hidden="true">↗</b>
+                      View case study <b aria-hidden="true"><ArrowUpRight /></b>
                     </span>
                   </a>
                 ) : null}
@@ -486,7 +487,7 @@ export default function Home() {
             <span>Prompt Engineering</span>
           </div>
           <a className="text-link magnetic reveal" href="/Kenechukwu-Okoye-Resume.pdf" download>
-            Download résumé <span aria-hidden="true">↓</span>
+            Download résumé <span aria-hidden="true"><ArrowDown /></span>
           </a>
         </div>
       </section>
@@ -559,7 +560,7 @@ export default function Home() {
               <small>Start a conversation</small>
               <strong>keneochine@gmail.com</strong>
             </span>
-            <span className="email-action" aria-hidden="true">↗</span>
+            <span className="email-action" aria-hidden="true"><ArrowUpRight /></span>
           </a>
           <div className="social-links reveal" aria-label="Social profiles">
             <a
@@ -575,14 +576,15 @@ export default function Home() {
                 <small>Code & projects</small>
                 <strong>GitHub</strong>
               </span>
-              <i aria-hidden="true">↗</i>
+              <i aria-hidden="true"><ArrowUpRight /></i>
             </a>
           </div>
           <div className="footer-bottom">
             <p>© 2026 Kenechukwu Okoye</p>
             <div>
               <a href="mailto:keneochine@gmail.com">Email</a>
-              <a href="https://github.com/KenechukwuDani7" target="_blank" rel="noreferrer">GitHub ↗</a>              <a href="#top">Back to top ↑</a>
+              <a href="https://github.com/KenechukwuDani7" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
+              <a href="#top">Back to top <ArrowUp /></a>
             </div>
           </div>
         </div>

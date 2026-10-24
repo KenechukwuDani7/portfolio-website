@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowUpRight } from "../../Icons";
 import "./golden-bills.css";
 
 const SITE_URL = "https://kenechukwuokoye.vercel.app";
@@ -86,7 +87,7 @@ export default function GoldenBillsCaseStudy() {
       <nav className="golden-nav" aria-label="Case study navigation">
         <a className="golden-mark" href="/" aria-label="Back to Kenechukwu Okoye portfolio">KO<span>®</span></a>
         <span>Golden Bills / Case study</span>
-        <a className="golden-back" href="/#work">Back to work ↗</a>
+        <a className="golden-back" href="/#work">Back to work <ArrowUpRight /></a>
       </nav>
 
       <header className="golden-hero">
@@ -235,7 +236,7 @@ export default function GoldenBillsCaseStudy() {
 
       <footer className="golden-footer">
         <p>Explore more work</p>
-        <a href="/#work">Return to selected projects ↗</a>
+        <a href="/#work">Return to selected projects <ArrowUpRight /></a>
         <a href="mailto:keneochine@gmail.com">keneochine@gmail.com</a>
       </footer>
     </main>

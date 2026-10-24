@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowDown, ArrowUpRight } from "../../Icons";
 import "./mentra.css";
 
 const SITE_URL = "https://kenechukwuokoye.vercel.app";
@@ -98,7 +99,7 @@ export default function MentraCaseStudy() {
         <div className="mentra-nav-actions">
           <a href="/#work">All work</a>
           <a className="nav-live" href={MENTRA_URL} target="_blank" rel="noreferrer">
-            Visit Mentra ↗
+            Visit Mentra <ArrowUpRight />
           </a>
         </div>
       </nav>
@@ -114,9 +115,9 @@ export default function MentraCaseStudy() {
           </p>
           <div className="hero-actions">
             <a className="primary-action" href={MENTRA_URL} target="_blank" rel="noreferrer">
-              Explore Mentra <span aria-hidden="true">↗</span>
+              Explore Mentra <span aria-hidden="true"><ArrowUpRight /></span>
             </a>
-            <a className="secondary-action" href="#case-overview">Read the case study ↓</a>
+            <a className="secondary-action" href="#case-overview">Read the case study <ArrowDown /></a>
           </div>
         </div>
 
@@ -131,7 +132,7 @@ export default function MentraCaseStudy() {
             decoding="async"
             fetchPriority="high"
           />
-          <span>Live product · learnwithmentra.vercel.app ↗</span>
+          <span>Live product · learnwithmentra.vercel.app <ArrowUpRight /></span>
         </a>
 
         <div className="hero-facts" aria-label="Project overview">
@@ -320,13 +321,13 @@ export default function MentraCaseStudy() {
         <p className="case-eyebrow">See the product</p>
         <h2>Explore Mentra in action.</h2>
         <p>Visit the product website to see the complete feature story and access the current Android build.</p>
-        <a href={MENTRA_URL} target="_blank" rel="noreferrer">Visit Mentra ↗</a>
+        <a href={MENTRA_URL} target="_blank" rel="noreferrer">Visit Mentra <ArrowUpRight /></a>
       </section>
 
       <footer className="mentra-footer">
         <div>
           <p>Next step</p>
-          <a href="/#work">Return to selected work ↗</a>
+          <a href="/#work">Return to selected work <ArrowUpRight /></a>
         </div>
         <a href="mailto:keneochine@gmail.com">keneochine@gmail.com</a>
       </footer>
