@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import HomeMotion from "../../HomeMotion";
 import { ArrowDown, ArrowUpRight } from "../../Icons";
-import "./osuko.css";
+import { CaseFooter, CaseNav, ToolBadges } from "../CaseParts";
+import "../case.css";
 
 const SITE_URL = "https://kenechukwuokoye.vercel.app";
 const PROJECT_URL = "https://osukoconstruction.vercel.app/";
@@ -20,6 +22,21 @@ export const metadata: Metadata = {
   },
 };
 
+const principles = [
+  {
+    title: "Authority without noise",
+    text: "Strong type, disciplined grids and confident spacing communicate capability without over-selling.",
+  },
+  {
+    title: "Specificity builds trust",
+    text: "Services and the delivery process are described in concrete, useful language.",
+  },
+  {
+    title: "Every section moves forward",
+    text: "The narrative progresses from purpose to capability, proof and a focused enquiry.",
+  },
+];
+
 const chapters = [
   {
     number: "01",
@@ -28,16 +45,16 @@ const chapters = [
     text: "Residential construction, commercial projects, project management and civil works needed to feel connected without becoming a wall of information. A numbered service system and generous spacing let prospects understand the company’s range in seconds, then slow down for detail.",
     image: "/work/osuko/services-desktop.webp",
     alt: "OSUKO construction services section",
-    insight: "Information architecture · Service hierarchy · Editorial layout",
+    insight: ["Information architecture", "Service hierarchy", "Editorial layout"],
   },
   {
     number: "02",
     label: "Process",
     title: "Trust built into the journey.",
-    text: "Construction clients need visibility as much as ambition. The four-step process—from discovery and planning to communication and handover—turns an operational promise into a reassuring, concrete story. The split layout balances technical structure with human confidence.",
+    text: "Construction clients need visibility as much as ambition. The four-step process, from discovery and planning to communication and handover, turns an operational promise into a reassuring, concrete story. The split layout balances technical structure with human confidence.",
     image: "/work/osuko/process-desktop.webp",
     alt: "OSUKO four-step construction process section",
-    insight: "Process storytelling · Trust signals · Visual rhythm",
+    insight: ["Process storytelling", "Trust signals", "Visual rhythm"],
   },
   {
     number: "03",
@@ -46,16 +63,16 @@ const chapters = [
     text: "Large, carefully framed imagery gives the portfolio section weight while the surrounding typography keeps it connected to the brand system. The composition moves between residential character, active delivery and precision-led execution without losing hierarchy.",
     image: "/work/osuko/work-desktop.webp",
     alt: "OSUKO selected construction focus and project imagery",
-    insight: "Image direction · Project framing · Responsive composition",
+    insight: ["Image direction", "Project framing", "Responsive composition"],
   },
   {
     number: "04",
     label: "Conversion",
     title: "A conversation, not a cold form.",
-    text: "The enquiry section asks for only the details needed to begin: contact information, project type and a short brief. Clear direct-contact alternatives and the deep-red brand field make the call to action feel like the natural conclusion to the story—not an interruption.",
+    text: "The enquiry section asks for only the details needed to begin: contact information, project type and a short brief. Clear direct-contact alternatives and the deep-red brand field make the call to action feel like the natural conclusion to the story, not an interruption.",
     image: "/work/osuko/contact-desktop.webp",
     alt: "OSUKO construction project enquiry form",
-    insight: "Lead capture · Form UX · Contact strategy",
+    insight: ["Lead capture", "Form UX", "Contact strategy"],
   },
 ];
 
@@ -67,6 +84,8 @@ const stack = [
   ["Conversion", "Structured enquiry flow with prepared email handoff"],
   ["Delivery", "VS Code, GitHub, Vercel hosting and Vercel Analytics"],
 ];
+
+const tools = ["Figma", "Next.js", "React", "HTML5", "CSS", "VS Code", "GitHub", "Vercel"];
 
 export default function OsukoCaseStudy() {
   const structuredData = {
@@ -81,30 +100,28 @@ export default function OsukoCaseStudy() {
   };
 
   return (
-    <main className="osuko-case">
+    <main className="case case-osuko">
+      <HomeMotion />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 
-      <nav className="osuko-nav" aria-label="Case study navigation">
-        <a className="osuko-mark" href="/" aria-label="Back to Kenechukwu Okoye portfolio">KO<span>®</span></a>
-        <span>OSUKO / Case study</span>
-        <a className="osuko-back" href="/#work">Back to work <ArrowUpRight /></a>
-      </nav>
+      <CaseNav label="OSUKO / Case study" />
 
-      <header className="osuko-hero">
-        <div className="osuko-hero-copy">
-          <p className="osuko-eyebrow">Brand website · Product design + development · 2026</p>
-          <h1>A digital foundation for a company that builds <em>what lasts.</em></h1>
-          <p className="osuko-lead">
-            OSUKO Construction needed more than an online brochure. I designed a responsive company
-            website that makes its purpose credible, its services understandable and the next step easy
-            for prospective clients.
-          </p>
-          <div className="osuko-actions">
-            <a className="visit-button" href={PROJECT_URL} target="_blank" rel="noreferrer">Visit live website <ArrowUpRight /></a>
-            <a href="#story">Explore the case study <ArrowDown /></a>
-          </div>
+      <header className="case-hero case-wrap">
+        <p className="case-label">Brand website · Product design + development · 2026</p>
+        <h1>A digital foundation for a company that builds <em>what lasts.</em></h1>
+        <p className="case-lead">
+          OSUKO Construction needed more than an online brochure. I designed a responsive company
+          website that makes its purpose credible, its services understandable and the next step easy
+          for prospective clients.
+        </p>
+        <div className="case-actions">
+          <a className="case-btn case-btn-accent" href={PROJECT_URL} target="_blank" rel="noreferrer">
+            Visit live website <ArrowUpRight />
+          </a>
+          <a className="case-btn" href="#story">Explore the case study <ArrowDown /></a>
         </div>
-        <div className="osuko-hero-frame">
+
+        <figure className="case-shot">
           <img
             src="/work/osuko/hero-desktop.webp"
             alt="OSUKO Construction website desktop landing page"
@@ -113,20 +130,21 @@ export default function OsukoCaseStudy() {
             decoding="async"
             fetchPriority="high"
           />
-          <div><span>Live interface</span><strong>Desktop / Home</strong></div>
+          <figcaption><span>Live interface</span>Desktop / Home</figcaption>
+          <span className="hand case-shot-note">designed + built by me</span>
+        </figure>
+
+        <div className="case-facts">
+          <div><span>Role</span><strong>Product design + front-end development</strong></div>
+          <div><span>Focus</span><strong>Brand credibility + lead generation</strong></div>
+          <div><span>Platform</span><strong>Responsive company website</strong></div>
+          <div><span>Status</span><strong>Designed, built and live</strong></div>
         </div>
       </header>
 
-      <section className="osuko-summary">
-        <div><span>Role</span><strong>Product design + front-end development</strong></div>
-        <div><span>Focus</span><strong>Brand credibility + lead generation</strong></div>
-        <div><span>Platform</span><strong>Responsive company website</strong></div>
-        <div><span>Status</span><strong>Designed, built and live</strong></div>
-      </section>
-
-      <section className="osuko-problem" id="story">
-        <p className="osuko-eyebrow">The challenge / 01</p>
-        <div>
+      <section className="case-section case-wrap case-split" id="story">
+        <p className="case-label">The challenge / 01</p>
+        <div className="case-body reveal">
           <h2>Make expertise feel clear before the first conversation.</h2>
           <p>
             Construction decisions carry cost, time and trust. A visitor needs to understand who the
@@ -136,24 +154,31 @@ export default function OsukoCaseStudy() {
         </div>
       </section>
 
-      <section className="osuko-principles" aria-label="OSUKO design principles">
-        <article><span>01</span><h3>Authority without noise</h3><p>Strong type, disciplined grids and confident spacing communicate capability without over-selling.</p></article>
-        <article><span>02</span><h3>Specificity builds trust</h3><p>Services and the delivery process are described in concrete, useful language.</p></article>
-        <article><span>03</span><h3>Every section moves forward</h3><p>The narrative progresses from purpose to capability, proof and a focused enquiry.</p></article>
+      <section className="case-section case-wrap" aria-label="OSUKO design principles">
+        <div className="case-cards">
+          {principles.map((principle, index) => (
+            <article className="reveal" key={principle.title}>
+              <span className="num">0{index + 1}</span>
+              <h3>{principle.title}</h3>
+              <p>{principle.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className="osuko-mobile-proof">
-        <div>
-          <p className="osuko-eyebrow">Responsive by design / 02</p>
-          <h2>The same confidence, held in one hand.</h2>
-          <p>
-            On mobile, the hierarchy tightens without losing the brand: navigation becomes compact,
-            the headline keeps its impact, actions remain thumb-friendly and the construction imagery
-            continues to carry the atmosphere.
-          </p>
-        </div>
-        <div className="mobile-device">
+      <section className="case-band">
+        <div className="case-wrap case-band-grid">
+          <div>
+            <p className="case-label">Responsive by design / 02</p>
+            <h2>The same confidence, held in one hand.</h2>
+            <p>
+              On mobile, the hierarchy tightens without losing the brand: navigation becomes compact,
+              the headline keeps its impact, actions remain thumb-friendly and the construction imagery
+              continues to carry the atmosphere.
+            </p>
+          </div>
           <img
+            className="case-phone"
             src="/work/osuko/hero-mobile.webp"
             alt="OSUKO Construction mobile landing page"
             width="390"
@@ -164,21 +189,23 @@ export default function OsukoCaseStudy() {
         </div>
       </section>
 
-      <section className="osuko-walkthrough" aria-label="OSUKO website walkthrough">
-        <div className="osuko-section-heading">
-          <p className="osuko-eyebrow">Experience walkthrough / 03</p>
+      <section className="case-section case-wrap" aria-label="OSUKO website walkthrough">
+        <div className="case-head reveal">
+          <p className="case-label">Experience walkthrough / 03</p>
           <h2>One story from capability to contact.</h2>
         </div>
-        {chapters.map((chapter) => (
-          <article className="osuko-chapter" key={chapter.number}>
-            <div className="chapter-copy">
-              <span>{chapter.number}</span>
-              <p className="chapter-label">{chapter.label}</p>
+        {chapters.map((chapter, index) => (
+          <article className={`case-chapter${index % 2 ? " reverse" : ""}`} key={chapter.number}>
+            <div className="reveal">
+              <p className="num">{chapter.number}</p>
+              <p className="case-label">{chapter.label}</p>
               <h3>{chapter.title}</h3>
               <p>{chapter.text}</p>
-              <small>{chapter.insight}</small>
+              <ul className="case-tags">
+                {chapter.insight.map((tag) => <li key={tag}>{tag}</li>)}
+              </ul>
             </div>
-            <figure>
+            <figure className="case-shot reveal">
               <img
                 src={chapter.image}
                 alt={chapter.alt}
@@ -192,39 +219,46 @@ export default function OsukoCaseStudy() {
         ))}
       </section>
 
-      <section className="osuko-build">
-        <div className="osuko-build-intro">
-          <p className="osuko-eyebrow">How it was built / 04</p>
+      <section className="case-section case-wrap case-split">
+        <div className="case-head reveal">
+          <p className="case-label">How it was built / 04</p>
           <h2>A brand system translated into working code.</h2>
           <p>
             I carried the design logic into a component-based Next.js build, preserving the editorial
             rhythm across screen sizes and connecting the final experience to a practical enquiry path,
             production hosting and visitor analytics.
           </p>
+          <ToolBadges tools={tools} />
         </div>
-        <div className="osuko-stack">
+        <ol className="case-list reveal">
           {stack.map(([title, detail], index) => (
-            <div key={title}><span>0{index + 1}</span><strong>{title}</strong><p>{detail}</p></div>
+            <li key={title}>
+              <span className="num">0{index + 1}</span>
+              <strong>{title}</strong>
+              <p>{detail}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
-      <section className="osuko-outcome">
-        <p className="osuko-eyebrow">The outcome / 05</p>
-        <blockquote>Built with the same principle as the company: every detail should support the whole.</blockquote>
-        <p>
+      <section className="case-section case-wrap">
+        <p className="case-label">The outcome / 05</p>
+        <blockquote className="case-quote reveal">
+          Built with the same principle as the company: every detail should support the whole.
+        </blockquote>
+        <p className="case-after">
           The finished site gives OSUKO a distinct, professional presence and gives prospective clients
           a clear route from curiosity to contact. It demonstrates my ability to connect brand thinking,
           responsive product design and front-end implementation in one coherent delivery.
         </p>
-        <a href={PROJECT_URL} target="_blank" rel="noreferrer">Experience the live website <ArrowUpRight /></a>
+        <div className="case-actions">
+          <a className="case-btn case-btn-accent" href={PROJECT_URL} target="_blank" rel="noreferrer">
+            Experience the live website <ArrowUpRight />
+          </a>
+        </div>
       </section>
 
-      <footer className="osuko-footer">
-        <p>Next project</p>
-        <a href="/#work">Explore all work <ArrowUpRight /></a>
-        <a href="mailto:keneochine@gmail.com">keneochine@gmail.com</a>
-      </footer>
+      <CaseFooter note="built to last, like the company" />
     </main>
   );
 }
