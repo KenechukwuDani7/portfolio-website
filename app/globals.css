@@ -397,6 +397,7 @@ em { font-family: var(--font-serif), Georgia, serif; font-weight: 500; }
 }
 .project-visual img {
   width: min(92%, 1130px);
+  height: auto;
   max-height: 81%;
   object-fit: contain;
   filter: saturate(.72) contrast(1.02);

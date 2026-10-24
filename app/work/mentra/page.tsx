@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "How Mentra turns uploaded study materials into grounded answers, summaries, flashcards, quizzes and focused study plans.",
     url: `${SITE_URL}/work/mentra`,
     type: "article",
-    images: [{ url: "/work/mentra/website-cover.png", alt: "Mentra AI website homepage" }],
+    images: [{ url: "/work/mentra/website-cover-og.jpg", alt: "Mentra AI website homepage" }],
   },
 };
 
@@ -121,7 +121,16 @@ export default function MentraCaseStudy() {
         </div>
 
         <a className="hero-cover" href={MENTRA_URL} target="_blank" rel="noreferrer" aria-label="Open the Mentra website">
-          <img src="/work/mentra/website-cover.png" alt="Mentra website homepage showing its AI study platform" />
+          <img
+            src="/work/mentra/website-cover-1440.webp"
+            srcSet="/work/mentra/website-cover-720.webp 720w, /work/mentra/website-cover-1440.webp 1440w"
+            sizes="(max-width: 1240px) 100vw, 1240px"
+            width="1440"
+            height="1050"
+            alt="Mentra website homepage showing its AI study platform"
+            decoding="async"
+            fetchPriority="high"
+          />
           <span>Live product · learnwithmentra.vercel.app ↗</span>
         </a>
 
@@ -174,7 +183,16 @@ export default function MentraCaseStudy() {
             </p>
           </div>
           <figure className="browser-shot">
-            <img src="/work/mentra/website-features.png" alt="Mentra website feature overview" loading="lazy" />
+            <img
+              src="/work/mentra/website-features-1440.webp"
+              srcSet="/work/mentra/website-features-720.webp 720w, /work/mentra/website-features-1440.webp 1440w"
+              sizes="(max-width: 900px) 100vw, 60vw"
+              width="1440"
+              height="1050"
+              alt="Mentra website feature overview"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>Current product capabilities on the Mentra website</figcaption>
           </figure>
         </article>
@@ -190,7 +208,16 @@ export default function MentraCaseStudy() {
             </p>
           </div>
           <figure className="browser-shot">
-            <img src="/work/mentra/website-workflow.png" alt="Mentra material-to-mastery workflow" loading="lazy" />
+            <img
+              src="/work/mentra/website-workflow-1440.webp"
+              srcSet="/work/mentra/website-workflow-720.webp 720w, /work/mentra/website-workflow-1440.webp 1440w"
+              sizes="(max-width: 900px) 100vw, 60vw"
+              width="1440"
+              height="1050"
+              alt="Mentra material-to-mastery workflow"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>The core learner journey from upload to continued progress</figcaption>
           </figure>
         </article>
@@ -207,7 +234,16 @@ export default function MentraCaseStudy() {
             </p>
           </div>
           <figure className="browser-shot">
-            <img src="/work/mentra/website-grounded.png" alt="Mentra grounded answer and citation experience" loading="lazy" />
+            <img
+              src="/work/mentra/website-grounded-1440.webp"
+              srcSet="/work/mentra/website-grounded-720.webp 720w, /work/mentra/website-grounded-1440.webp 1440w"
+              sizes="(max-width: 900px) 100vw, 60vw"
+              width="1440"
+              height="1050"
+              alt="Mentra grounded answer and citation experience"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>Relevant context, learner-level explanations and visible citations</figcaption>
           </figure>
         </article>

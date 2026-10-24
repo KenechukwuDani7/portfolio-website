@@ -6,7 +6,10 @@ const projects = [
     index: "01",
     type: "AI Learning Platform",
     year: "2026",
-    image: "/work/mentra/website-cover.png",
+    image: "/work/mentra/website-cover-1440.webp",
+    srcSet: "/work/mentra/website-cover-720.webp 720w, /work/mentra/website-cover-1440.webp 1440w",
+    width: 1440,
+    height: 1050,
     href: "/work/mentra",
     className: "project-wide project-mentra-web",
     description:
@@ -24,6 +27,9 @@ const projects = [
     type: "Construction Company Website",
     year: "2026",
     image: "/work/osuko/hero-desktop.webp",
+    srcSet: undefined,
+    width: 1200,
+    height: 833,
     href: "/work/osuko",
     className: "project-wide project-osuko",
     description:
@@ -41,6 +47,9 @@ const projects = [
     type: "Bills & Payments Platform",
     year: "2025",
     image: "/work/golden-bills/dashboard.webp",
+    srcSet: undefined,
+    width: 1200,
+    height: 853,
     href: "/work/golden-bills",
     className: "project-wide project-gold",
     description:
@@ -57,7 +66,10 @@ const projects = [
     index: "04",
     type: "Food Ordering App",
     year: "2025",
-    image: "/work/chow-now.png",
+    image: "/work/chow-now-1400.webp",
+    srcSet: "/work/chow-now-800.webp 800w, /work/chow-now-1400.webp 1400w, /work/chow-now-2400.webp 2400w",
+    width: 1400,
+    height: 546,
     href: null,
     className: "project-wide project-chow",
     description:
@@ -73,7 +85,7 @@ const projects = [
 
 const tools = [
   { name: "Figma", logo: "/tools/brands/figma.svg", use: "Flows, wireframes, UI systems & prototypes" },
-  { name: "ChatGPT", logo: "/tools/chatgpt.png", use: "Research synthesis, ideation & AI workflows" },
+  { name: "ChatGPT", logo: "/tools/chatgpt-160.webp", use: "Research synthesis, ideation & AI workflows" },
   { name: "Claude", logo: "/tools/brands/claude.svg", use: "Product thinking, writing & code collaboration" },
   { name: "Canva", logo: "/tools/brands/canva.svg", use: "Fast visual communication & presentations" },
   { name: "VS Code", logo: "/tools/brands/vscode.svg", use: "Front-end development, testing & debugging" },
@@ -250,6 +262,10 @@ export default function Home() {
                 <div className="project-number">{project.index}</div>
                 <img
                   src={project.image}
+                  srcSet={project.srcSet}
+                  sizes="(max-width: 900px) 100vw, 1260px"
+                  width={project.width}
+                  height={project.height}
                   alt={`${project.title} interface design`}
                   loading="lazy"
                   decoding="async"
@@ -411,7 +427,16 @@ export default function Home() {
 
       <section className="about shell" id="about">
         <div className="portrait-wrap reveal" data-parallax="0.035">
-          <img src="/portrait.jpg" alt="Kenechukwu Okoye" />
+          <img
+            src="/portrait-1080.webp"
+            srcSet="/portrait-640.webp 640w, /portrait-1080.webp 1080w"
+            sizes="(max-width: 900px) 86vw, 610px"
+            width="1080"
+            height="1920"
+            alt="Kenechukwu Okoye"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="portrait-note glass-card">
             <span>Currently</span>
             <strong>Designing at Binary Brawlers</strong>

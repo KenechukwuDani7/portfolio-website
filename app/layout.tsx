@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     locale: "en_NG",
     images: [
       {
-        url: "/og-v2.png",
+        url: "/og-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Kenechukwu Okoye — Product Design, Software and AI",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-v2.png"],
+    images: ["/og-v2.jpg"],
   },
 };
 
@@ -113,7 +113,7 @@ const profileJsonLd = {
       givenName: "Kenechukwu",
       familyName: "Okoye-Chine",
       url: SITE_URL,
-      image: `${SITE_URL}/portrait.jpg`,
+      image: `${SITE_URL}/portrait-1080.webp`,
       email: "mailto:keneochine@gmail.com",
       jobTitle: ["Product Designer", "Software Developer"],
       description: DESCRIPTION,

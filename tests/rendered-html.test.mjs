@@ -70,10 +70,10 @@ test("server-renders the Mentra AI case study", async () => {
   assert.match(html, /Supabase Edge Function/i);
   assert.match(html, /Groq API/i);
   assert.match(html, /https:\/\/learnwithmentra\.vercel\.app\//i);
-  assert.match(html, /\/work\/mentra\/website-cover\.png/i);
-  assert.match(html, /\/work\/mentra\/website-features\.png/i);
-  assert.match(html, /\/work\/mentra\/website-workflow\.png/i);
-  assert.match(html, /\/work\/mentra\/website-grounded\.png/i);
+  assert.match(html, /\/work\/mentra\/website-cover-1440\.webp/i);
+  assert.match(html, /\/work\/mentra\/website-features-1440\.webp/i);
+  assert.match(html, /\/work\/mentra\/website-workflow-1440\.webp/i);
+  assert.match(html, /\/work\/mentra\/website-grounded-1440\.webp/i);
   assert.doesNotMatch(html, /\/work\/mentra\/(?:home|library|practice|planner|settings|ai-tutor)\.(?:jpg|png)/i);
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/mentra"/i);
 });
@@ -125,7 +125,7 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(css, /font-size:\s*clamp\(2\.9rem, 14\.4vw, 4\.35rem\)/);
   assert.match(motion, /window\.innerWidth > 768/);
   assert.match(motion, /\(pointer: fine\)/);
-  assert.match(page, /kenechukwu-okoye-chine-0a3918413/);
+  assert.doesNotMatch(page, /kenechukwu-okoye-chine-0a3918413/);
   assert.match(page, /github\.com\/KenechukwuDani7/);
   assert.match(layout, /alternates:\s*\{ canonical: "\/" \}/);
   assert.match(layout, /"@type": "ProfilePage"/);
