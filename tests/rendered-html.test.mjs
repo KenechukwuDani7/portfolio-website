@@ -52,10 +52,7 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /TypeScript/);
   assert.match(html, /Vercel/);
   assert.match(html, /keneochine@gmail\.com/);
-  assert.match(
-    html,
-    /https:\/\/www\.linkedin\.com\/in\/kenechukwu-okoye-chine-0a3918413\//,
-  );
+  assert.doesNotMatch(html, /linkedin\.com|x\.com\/koda_thegreat7/);
   assert.match(html, /https:\/\/github\.com\/KenechukwuDani7/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });

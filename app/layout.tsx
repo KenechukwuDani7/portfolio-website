@@ -77,7 +77,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    creator: "@koda_thegreat7",
     images: ["/og-v2.png"],
   },
 };
@@ -110,7 +109,6 @@ const profileJsonLd = {
       alternateName: [
         "Kenechukwu Okoye-Chine",
         "Koda the Great",
-        "@koda_thegreat7",
       ],
       givenName: "Kenechukwu",
       familyName: "Okoye-Chine",
@@ -131,11 +129,7 @@ const profileJsonLd = {
         "@type": "CollegeOrUniversity",
         name: "Nnamdi Azikiwe University",
       },
-      sameAs: [
-        "https://www.linkedin.com/in/kenechukwu-okoye-chine-0a3918413/",
-        "https://github.com/KenechukwuDani7",
-        "https://x.com/koda_thegreat7",
-      ],
+      sameAs: ["https://github.com/KenechukwuDani7"],
     },
   ],
 };

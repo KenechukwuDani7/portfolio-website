@@ -852,7 +852,7 @@ footer#contact .eyebrow { color: #555; }
 }
 .social-links {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   margin-top: 22px;
   border: 1px solid rgba(0,0,0,.22);
   border-radius: 6px;
@@ -878,19 +878,6 @@ footer#contact .eyebrow { color: #555; }
   border-radius: 13px;
   font-size: 1.15rem;
   font-weight: 700;
-}
-.linkedin-logo {
-  color: #fff;
-  border-color: #0a66c2;
-  background: #0a66c2;
-  font-family: Arial, sans-serif;
-  letter-spacing: -.05em;
-}
-.x-logo {
-  color: #fff;
-  background: #050505;
-  border-color: #050505;
-  font-family: Arial, sans-serif;
 }
 .github-logo {
   overflow: hidden;

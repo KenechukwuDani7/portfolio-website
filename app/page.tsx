@@ -538,32 +538,6 @@ export default function Home() {
           </a>
           <div className="social-links reveal" aria-label="Social profiles">
             <a
-              href="https://www.linkedin.com/in/kenechukwu-okoye-chine-0a3918413/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Kenechukwu Okoye on LinkedIn"
-            >
-              <span className="social-logo linkedin-logo" aria-hidden="true">in</span>
-              <span>
-                <small>Professional profile</small>
-                <strong>LinkedIn</strong>
-              </span>
-              <i aria-hidden="true">↗</i>
-            </a>
-            <a
-              href="https://x.com/koda_thegreat7"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Kenechukwu Okoye on X"
-            >
-              <span className="social-logo x-logo" aria-hidden="true">X</span>
-              <span>
-                <small>@koda_thegreat7</small>
-                <strong>Follow on X</strong>
-              </span>
-              <i aria-hidden="true">↗</i>
-            </a>
-            <a
               href="https://github.com/KenechukwuDani7"
               target="_blank"
               rel="noreferrer"
@@ -583,9 +557,7 @@ export default function Home() {
             <p>© 2026 Kenechukwu Okoye</p>
             <div>
               <a href="mailto:keneochine@gmail.com">Email</a>
-              <a href="https://github.com/KenechukwuDani7" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="https://x.com/koda_thegreat7" target="_blank" rel="noreferrer">X / Twitter ↗</a>
-              <a href="#top">Back to top ↑</a>
+              <a href="https://github.com/KenechukwuDani7" target="_blank" rel="noreferrer">GitHub ↗</a>              <a href="#top">Back to top ↑</a>
             </div>
           </div>
         </div>
