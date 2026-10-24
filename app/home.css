@@ -147,7 +147,8 @@
   font-size: clamp(3.4rem, 12.6vw, 12.5rem);
   line-height: 0.84 !important;
 }
-.hero-title span { display: block; }
+/* Never split the name mid-word, whatever width the font renders at. */
+.hero-title span { display: block; white-space: nowrap; overflow-wrap: normal; }
 /* Outline built from shadows: text-stroke draws the font's inner overlaps. */
 .hero-title span + span {
   --o: 3px;
@@ -212,7 +213,8 @@
 @keyframes spin { to { rotate: 360deg; } }
 
 /* Curtain */
-.curtain { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+/* Grid centring: Safari ignores height: fit-content on an absolutely placed box. */
+.curtain { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; padding: 64px 20px 0; pointer-events: none; }
 .curtain-side {
   position: absolute;
   top: 0;
@@ -244,11 +246,8 @@
 }
 
 .ticket {
-  position: absolute;
-  inset: 0;
-  width: fit-content;
-  height: fit-content;
-  margin: auto;
+  position: relative;
+  max-width: 100%;
   display: grid;
   justify-items: center;
   gap: 6px;
@@ -465,11 +464,12 @@
   left: 0;
   width: 100%;
   aspect-ratio: 1;
+  -webkit-clip-path: url(#scallop);
   clip-path: url(#scallop);
   background: var(--ink);
   translate: 12px 12px;
 }
-.portrait-stamp { position: relative; aspect-ratio: 1; clip-path: url(#scallop); background: var(--ink); }
+.portrait-stamp { position: relative; aspect-ratio: 1; -webkit-clip-path: url(#scallop); clip-path: url(#scallop); background: var(--ink); }
 .portrait-stamp img {
   width: 100%;
   height: 100%;
@@ -629,13 +629,15 @@
   .hero { padding-inline: 20px; }
   .hero-kicker { flex-direction: column; gap: 6px; font-size: 0.72rem; }
   .hero-kicker .icon { display: none; }
-  .hero-title { font-size: clamp(3rem, 17.5vw, 6rem); }
+  .hero-title { font-size: clamp(2.6rem, 16vw, 6rem); }
   .hero-title span + span { --o: 2px; }
   .hero-pencil { width: 70px; left: 4%; top: 6%; }
   .hero-cursor { width: 46px; right: 6%; top: 10%; }
   .hero-flower { width: 58px; left: 6%; bottom: 13%; }
   .hero-braces { width: 58px; right: 6%; bottom: 14%; }
   .hero-squiggle { display: none; }
+  .hero-pencil { top: 2%; }
+  .hero-cursor { top: 3%; }
   .ticket { padding: 26px 30px 22px; }
   .steps { grid-template-columns: 1fr; gap: 34px; }
   .process,
@@ -654,6 +656,15 @@
   .topbar-cta { padding: 0.45em 0.8em; font-size: 0.82rem; }
   .hero-actions .button { width: 100%; justify-content: center; }
   .hero-actions .button-ghost { font-size: 0.9rem; }
+}
+
+/* Short phone screens: keep the bottom doodles off the buttons. */
+@media (max-width: 760px) and (max-height: 780px) {
+  .hero-flower,
+  .hero-braces { display: none; }
+  .hero { padding-top: 24px; padding-bottom: 64px; }
+  .hero-line { margin-top: 20px; }
+  .hero-actions { margin-top: 24px; gap: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
