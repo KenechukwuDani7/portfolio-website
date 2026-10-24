@@ -1,124 +1,136 @@
-import MotionLayer from "./MotionLayer";
-import { ArrowDown, ArrowDownRight, ArrowUp, ArrowUpRight, Sparkle } from "./Icons";
+import HomeMotion from "./HomeMotion";
+import { ArrowDown, ArrowUp, ArrowUpRight, Sparkle } from "./Icons";
+import {
+  BezierPen,
+  Braces,
+  Cursor,
+  CurvedArrow,
+  Flower,
+  Magnifier,
+  Pencil,
+  ScallopClip,
+  Squiggle,
+  Wireframe,
+} from "./Doodles";
+import "./home.css";
+
+const EMAIL = "keneochine@gmail.com";
+const GITHUB = "https://github.com/KenechukwuDani7";
 
 const projects = [
   {
     title: "Mentra",
     index: "01",
-    type: "AI Learning Platform",
+    type: "AI learning platform",
     year: "2026",
     image: "/work/mentra/website-cover-1440.webp",
     srcSet: "/work/mentra/website-cover-720.webp 720w, /work/mentra/website-cover-1440.webp 1440w",
     width: 1440,
     height: 1050,
     href: "/work/mentra",
-    className: "project-wide project-mentra-web",
+    note: "live on the web + Android",
     description:
       "A Groq-powered learning platform that turns uploaded materials into grounded answers, summaries, flashcards, quizzes and focused study plans.",
-    challenge:
-      "Students often have the material but not the structure, time or guidance needed to study it effectively.",
     contribution:
       "I shaped the product architecture, interface system, secure data and AI workflows, mobile application and responsive launch experience.",
-    intersection: "Product design × AI engineering",
     tags: ["Product strategy", "Expo", "AI engineering"],
   },
   {
     title: "OSUKO Construction",
     index: "02",
-    type: "Construction Company Website",
+    type: "Construction company website",
     year: "2026",
     image: "/work/osuko/hero-desktop.webp",
     srcSet: undefined,
     width: 1200,
     height: 833,
     href: "/work/osuko",
-    className: "project-wide project-osuko",
+    note: null,
     description:
       "A confident, responsive company website that turns OSUKO’s standards, services and project process into a clear path from first impression to enquiry.",
-    challenge:
-      "A growing construction company needed a credible digital presence that could communicate capability and care without feeling like a generic contractor template.",
     contribution:
-      "I shaped the information architecture, visual direction, responsive experience and front-end delivery, connecting brand storytelling to a useful project enquiry flow.",
-    intersection: "Brand expression × Web development",
+      "I shaped the information architecture, visual direction, responsive experience and front-end delivery.",
     tags: ["Web design", "Next.js", "Responsive UX"],
   },
   {
     title: "Golden Bills",
     index: "03",
-    type: "Bills & Payments Platform",
+    type: "Bills & payments platform",
     year: "2025",
     image: "/work/golden-bills/dashboard.webp",
     srcSet: undefined,
     width: 1200,
     height: 853,
     href: "/work/golden-bills",
-    className: "project-wide project-gold",
+    note: null,
     description:
       "A focused fintech dashboard for funding a wallet, paying utilities, buying airtime and data, and tracking every transaction in one place.",
-    challenge:
-      "Several payment services, form requirements and transaction states needed to feel like one predictable and trustworthy system.",
     contribution:
       "I designed the dashboard hierarchy, reusable service patterns, payment forms, status feedback and account experience.",
-    intersection: "Fintech UX × Interface systems",
     tags: ["Product design", "Fintech", "Dashboard"],
   },
   {
     title: "Chow Now",
     index: "04",
-    type: "Food Ordering App",
+    type: "Food ordering app",
     year: "2025",
     image: "/work/chow-now-1400.webp",
     srcSet: "/work/chow-now-800.webp 800w, /work/chow-now-1400.webp 1400w, /work/chow-now-2400.webp 2400w",
     width: 1400,
     height: 546,
     href: null,
-    className: "project-wide project-chow",
+    note: "research → personas → prototype",
     description:
       "A complete food-ordering journey shaped through research, personas, information architecture, high-fidelity screens and prototyping.",
-    challenge:
-      "Help hungry users move from discovery to checkout quickly, without making choice and navigation feel overwhelming.",
     contribution:
-      "I worked across research, personas, flows, mobile interface design and interactive prototyping to create a coherent end-to-end journey.",
-    intersection: "Research × Mobile product design",
+      "I worked across research, personas, flows, mobile interface design and interactive prototyping.",
     tags: ["User research", "Mobile UX", "Prototype"],
   },
 ];
 
-const tools = [
-  { name: "Figma", logo: "/tools/brands/figma.svg", use: "Flows, wireframes, UI systems & prototypes" },
-  { name: "ChatGPT", logo: "/tools/chatgpt-160.webp", use: "Research synthesis, ideation & AI workflows" },
-  { name: "Claude", logo: "/tools/brands/claude.svg", use: "Product thinking, writing & code collaboration" },
-  { name: "Canva", logo: "/tools/brands/canva.svg", use: "Fast visual communication & presentations" },
-  { name: "VS Code", logo: "/tools/brands/vscode.svg", use: "Front-end development, testing & debugging" },
-  { name: "GitHub", logo: "/tools/brands/github.svg", use: "Version control & product collaboration" },
+const steps = [
+  {
+    label: "Discover",
+    title: "Understand before drawing.",
+    text: "I clarify the product goal, the people, the context and the constraints, then turn what I learn into a problem worth solving.",
+    Art: Magnifier,
+  },
+  {
+    label: "Structure",
+    title: "Make complexity navigable.",
+    text: "User flows, information architecture and low-fidelity wireframes test the logic before visual polish gets in the way.",
+    Art: Wireframe,
+  },
+  {
+    label: "Design & prototype",
+    title: "Give the idea behaviour.",
+    text: "Responsive interface systems and interactive prototypes make decisions tangible for users and collaborators.",
+    Art: BezierPen,
+  },
+  {
+    label: "Build & ship",
+    title: "Stay close to the code.",
+    text: "I build what I design in React, React Native and Next.js, so feasibility is tested early and nothing gets lost in handoff.",
+    Art: Braces,
+  },
 ];
 
-const technologies = [
-  { name: "HTML5", logo: "/tools/brands/html5.svg", use: "Semantic structure" },
-  { name: "CSS", logo: "/tools/brands/css.svg", use: "Responsive visual systems" },
-  { name: "TypeScript", logo: "/tools/brands/typescript.svg", use: "Typed product code" },
-  { name: "React", logo: "/tools/brands/react.svg", use: "Component interfaces" },
-  { name: "Expo", logo: "/tools/brands/expo.svg", use: "Cross-platform mobile apps" },
-  { name: "Next.js", logo: "/tools/brands/nextjs.svg", use: "Production web applications" },
-  { name: "Vercel", logo: "/tools/brands/vercel.svg", use: "Deployment & analytics" },
+const designKit = [
+  { name: "Figma", logo: "/tools/brands/figma.svg" },
+  { name: "Canva", logo: "/tools/brands/canva.svg" },
+  { name: "Claude", logo: "/tools/brands/claude.svg" },
+  { name: "VS Code", logo: "/tools/brands/vscode.svg" },
+  { name: "GitHub", logo: "/tools/brands/github.svg" },
 ];
 
-const capabilities = [
-  {
-    number: "01",
-    title: "Product design",
-    text: "I turn product goals and user needs into flows, wireframes, responsive interfaces, prototypes and design systems.",
-  },
-  {
-    number: "02",
-    title: "Software development",
-    text: "My computer science background helps me design with implementation in mind, build interfaces and communicate clearly with engineers.",
-  },
-  {
-    number: "03",
-    title: "AI-enabled products",
-    text: "I explore where AI genuinely reduces friction, then shape the prompts, interactions, feedback and safeguards around the capability.",
-  },
+const buildKit = [
+  { name: "HTML5", logo: "/tools/brands/html5.svg" },
+  { name: "CSS", logo: "/tools/brands/css.svg" },
+  { name: "TypeScript", logo: "/tools/brands/typescript.svg" },
+  { name: "React", logo: "/tools/brands/react.svg" },
+  { name: "Expo", logo: "/tools/brands/expo.svg" },
+  { name: "Next.js", logo: "/tools/brands/nextjs.svg" },
+  { name: "Vercel", logo: "/tools/brands/vercel.svg" },
 ];
 
 const experience = [
@@ -148,445 +160,353 @@ const experience = [
   },
 ];
 
+const rules = [
+  {
+    title: "Clarity earns trust.",
+    text: "Good products explain themselves through hierarchy, language and predictable behaviour.",
+  },
+  {
+    title: "Technology needs a reason.",
+    text: "I use AI and software capability when they improve the experience, not just because they are available.",
+  },
+  {
+    title: "Design is collaborative.",
+    text: "The strongest outcomes come from sharing unfinished thinking, testing assumptions and learning together.",
+  },
+];
+
+const marquee = ["Product design", "Interfaces", "Design systems", "Prototyping", "React Native", "Next.js", "AI features"];
+
 export default function Home() {
   return (
-    <main>
-      <MotionLayer />
-      <div className="noise" aria-hidden="true" />
-      <div className="scroll-progress" aria-hidden="true" />
-      <div className="cursor-dot" aria-hidden="true" />
-      <div className="cursor-ring" aria-hidden="true" />
+    <main className="home">
+      <HomeMotion />
+      <noscript>
+        <style>{".stage{--open:1}"}</style>
+      </noscript>
+      <ScallopClip id="scallop" />
 
-      <nav className="nav shell" aria-label="Main navigation">
-        <a href="#top" className="monogram magnetic" aria-label="Kenechukwu Okoye home">
-          KO<span>®</span>
+      <header className="topbar">
+        <a href="#top" className="topbar-mark" aria-label="Kenechukwu Okoye, back to top">
+          KO<span>.</span>
         </a>
-        <div className="nav-links">
+        <nav aria-label="Main navigation">
           <a href="#work">Work</a>
-          <a href="#expertise">Expertise</a>
+          <a href="#process">Process</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-        </div>
-        <a className="availability magnetic" href="mailto:keneochine@gmail.com">
-          <span />
-          Available for work
+        </nav>
+        <a className="topbar-cta" href={`mailto:${EMAIL}`}>
+          Email me <ArrowUpRight />
         </a>
-      </nav>
-
-      <a className="contact-dock magnetic" href="mailto:keneochine@gmail.com">
-        <span className="contact-dock-label">Email me</span>
-        <strong>keneochine@gmail.com</strong>
-        <i aria-hidden="true"><ArrowUpRight /></i>
-      </a>
-
-      <header className="hero shell" id="top">
-        <div className="hero-kicker reveal">
-          <span>Product designer</span>
-          <span>Software developer</span>
-          <span>Port Harcourt, Nigeria</span>
-        </div>
-        <h1 className="hero-title" aria-label="Kenechukwu Okoye">
-          <span className="hero-name-row" data-speed="0.04">
-            KENECHUKWU
-          </span>
-          <span className="hero-name-row outline" data-speed="-0.03">
-            OKOYE
-          </span>
-        </h1>
-        <div className="hero-statement reveal">
-          <p>
-            I design and build useful digital products at the intersection of
-            <strong> product thinking, software and AI.</strong>
-          </p>
-          <a href="#work" className="round-link magnetic" aria-label="See selected work">
-            <span>Explore work</span>
-            <b aria-hidden="true"><ArrowDownRight /></b>
-          </a>
-        </div>
-        <div className="hero-meta reveal">
-          <span>BSc Computer Science</span>
-          <span>Designing for clarity, access and real-world use</span>
-          <span>Scroll to explore <ArrowDown /></span>
-        </div>
-        <div className="orb orb-one" data-parallax="0.08" aria-hidden="true" />
-        <div className="orb orb-two" data-parallax="-0.05" aria-hidden="true" />
       </header>
 
-      <section className="marquee" aria-label="Areas of expertise">
-        <div>
-          Product Design <i><Sparkle /></i> User Experience <i><Sparkle /></i> AI Integration{" "}
-          <i><Sparkle /></i> Creative Development <i><Sparkle /></i> Prototyping <i><Sparkle /></i>
-          Design Systems <i><Sparkle /></i>
+      <section className="stage" id="top" aria-label="Introduction">
+        <div className="stage-frame">
+          <div className="hero">
+            <p className="hero-kicker">
+              <span>Product designer</span>
+              <Sparkle />
+              <span>Software developer</span>
+              <Sparkle />
+              <span>Port Harcourt, NG</span>
+            </p>
+            <h1 className="hero-title">
+              <span>Kenechukwu</span>
+              <span>Okoye</span>
+            </h1>
+            <div className="hero-line">
+              <p>
+                I design products, <br />
+                then I <u>build them</u>.
+              </p>
+              <span className="hand hero-note">
+                yes, both of them
+                <CurvedArrow />
+              </span>
+            </div>
+            <div className="hero-actions">
+              <a className="button" href="#work">
+                See the work <ArrowDown />
+              </a>
+              <a className="button button-ghost" href={`mailto:${EMAIL}`}>
+                {EMAIL}
+              </a>
+            </div>
+            <Pencil className="float hero-pencil" />
+            <Cursor className="float hero-cursor" />
+            <Flower className="float spin hero-flower" />
+            <Braces className="float hero-braces" />
+            <Squiggle className="hero-squiggle" />
+          </div>
+
+          <div className="curtain" aria-hidden="true">
+            <div className="curtain-side curtain-left"><div className="curtain-cloth" /></div>
+            <div className="curtain-side curtain-right"><div className="curtain-cloth" /></div>
+            <div className="ticket">
+              <span className="ticket-top">Admit one</span>
+              <strong>Kenechukwu Okoye</strong>
+              <span className="ticket-sub">Designer who ships</span>
+              <span className="ticket-hint">
+                Scroll to open <ArrowDown />
+              </span>
+            </div>
+          </div>
+          <div className="valance" aria-hidden="true" />
         </div>
       </section>
 
-      <section className="intro shell" id="expertise">
-        <p className="eyebrow reveal">What I bring / 01</p>
-        <div className="intro-main">
-          <h2 className="reveal">
-            Not just screens.
-            <br />
-            I connect <em>the system.</em>
-          </h2>
-          <p className="intro-copy reveal">
-            I understand the full conversation around a digital product: what
-            the user needs, what the interface should communicate, how AI can
-            help, and what developers need to make it real.
+      <div className="band" aria-hidden="true">
+        <div className="band-track">
+          {[0, 1].map((copy) => (
+            <span key={copy}>
+              {marquee.map((item) => (
+                <span key={item}>
+                  {item} <Sparkle />
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <section className="process shell" id="process">
+        <div className="section-head reveal">
+          <p className="label">How I work</p>
+          <h2>From a rough sketch to a shipped product.</h2>
+          <p>
+            I move between user needs, interface decisions and technical constraints the whole way through,
+            not as disconnected phases.
           </p>
         </div>
-        <div className="capability-grid">
-          {capabilities.map((item) => (
-            <article className="capability reveal tilt-card" key={item.title}>
-              <span>{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <i aria-hidden="true"><ArrowUpRight /></i>
-            </article>
-          ))}
+        <div className="process-track">
+          <svg className="process-path" viewBox="0 0 1180 140" preserveAspectRatio="none" aria-hidden="true">
+            <path
+              data-draw
+              pathLength={1}
+              d="M0 70C15 35 25 20 41 20C160 20 220 100 342 100C460 100 520 20 643 20C760 20 820 100 944 100C1050 100 1120 70 1180 70"
+            />
+          </svg>
+          <ol className="steps">
+            {steps.map(({ label, title, text, Art }, index) => (
+              <li className="step reveal" key={label}>
+                <span className="step-number">{index + 1}</span>
+                <Art className="step-art" />
+                <p className="label">{label}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="hand process-note">the code is never an afterthought</p>
         </div>
       </section>
 
       <section className="work shell" id="work">
-        <div className="section-heading reveal">
-          <p className="eyebrow">Selected work / 2025—26</p>
-          <h2>
-            Products shaped from
-            <br />
-            idea to <em>interface.</em>
-          </h2>
+        <div className="section-head reveal">
+          <p className="label">Selected work · 2025 — 26</p>
+          <h2>Things I’ve designed, and built.</h2>
         </div>
-
         <div className="projects">
           {projects.map((project) => (
             <article className="project reveal" key={project.title}>
-              <div className={`project-visual tilt-card ${project.className}`}>
-                <div className="project-number">{project.index}</div>
-                <img
-                  src={project.image}
-                  srcSet={project.srcSet}
-                  sizes="(max-width: 900px) 100vw, 1260px"
-                  width={project.width}
-                  height={project.height}
-                  alt={`${project.title} interface design`}
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="project-frame">
                 {project.href ? (
-                  <a
-                    className="project-visual-link"
-                    href={project.href}
-                    aria-label={`View ${project.title} case study`}
-                  >
-                    <span>
-                      View case study <b aria-hidden="true"><ArrowUpRight /></b>
-                    </span>
+                  <a href={project.href} aria-label={`View ${project.title} case study`}>
+                    <img
+                      src={project.image}
+                      srcSet={project.srcSet}
+                      sizes="(max-width: 900px) 92vw, 640px"
+                      width={project.width}
+                      height={project.height}
+                      alt={`${project.title} interface design`}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
-                ) : null}
-                <div className="glass-label">
-                  <span>{project.type}</span>
-                  <b>{project.year}</b>
-                </div>
+                ) : (
+                  <img
+                    src={project.image}
+                    srcSet={project.srcSet}
+                    sizes="(max-width: 900px) 92vw, 640px"
+                    width={project.width}
+                    height={project.height}
+                    alt={`${project.title} interface design`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+                {project.note ? <span className="hand project-note">{project.note}</span> : null}
               </div>
-              <div className="project-info">
-                <div>
-                  <p className="eyebrow">{project.intersection}</p>
-                  <h3>{project.title}</h3>
-                </div>
+              <div className="project-copy">
+                <p className="project-meta">
+                  <span className="project-index">{project.index}</span>
+                  {project.type} · {project.year}
+                </p>
+                <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <div className="tags">
+                <p className="project-role">
+                  <strong>My part:</strong> {project.contribution}
+                </p>
+                <ul className="tags">
                   {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
+                    <li key={tag}>{tag}</li>
                   ))}
-                </div>
-              </div>
-              <div className="project-detail">
-                <div>
-                  <span>Challenge</span>
-                  <p>{project.challenge}</p>
-                </div>
-                <div>
-                  <span>My contribution</span>
-                  <p>{project.contribution}</p>
-                </div>
+                </ul>
+                {project.href ? (
+                  <a className="button" href={project.href}>
+                    View case study <ArrowUpRight />
+                  </a>
+                ) : (
+                  <span className="soon">Case study coming soon</span>
+                )}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="toolbox">
-        <div className="shell">
-          <div className="section-heading reveal">
-            <p className="eyebrow">Tools I use / 02</p>
-            <h2>
-              A flexible toolkit for
-              <br />
-              <em>thinking and making.</em>
-            </h2>
-          </div>
-          <div className="tools-grid">
-            {tools.map((tool, index) => (
-              <article className="tool-card reveal tilt-card" key={tool.name}>
-                <span className="tool-index">0{index + 1}</span>
-                <div className="tool-mark">
-                  <img src={tool.logo} alt={`${tool.name} logo`} loading="lazy" />
-                </div>
-                <h3>{tool.name}</h3>
-                <p>{tool.use}</p>
-              </article>
-            ))}
-          </div>
-          <div className="technology-stack reveal">
-            <div className="technology-heading">
-              <div>
-                <p className="eyebrow">Build & delivery stack</p>
-                <h3>Technologies I use to make the work real.</h3>
-              </div>
-              <p>
-                From semantic web foundations to cross-platform mobile apps,
-                component systems and production deployment.
-              </p>
-            </div>
-            <div className="technology-grid">
-              {technologies.map((technology, index) => (
-                <article className="technology-card" key={technology.name}>
-                  <span>0{index + 1}</span>
-                  <div className="technology-mark">
-                    <img src={technology.logo} alt={`${technology.name} logo`} loading="lazy" decoding="async" />
-                  </div>
-                  <div>
-                    <h4>{technology.name}</h4>
-                    <p>{technology.use}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="tool-marquee" aria-hidden="true">
-          <span>FIGMA — CHATGPT — CLAUDE — REACT — EXPO — TYPESCRIPT — NEXT.JS — VERCEL — </span>
-          <span>FIGMA — CHATGPT — CLAUDE — REACT — EXPO — TYPESCRIPT — NEXT.JS — VERCEL — </span>
-        </div>
-      </section>
-
-      <section className="process shell">
-        <div className="process-sticky">
-          <p className="eyebrow reveal">How I work / 03</p>
-          <h2 className="reveal">
-            One process.
-            <br />
-            Three <em>lenses.</em>
-          </h2>
-          <p className="reveal">
-            I move between user needs, interface decisions and technical
-            constraints throughout the project—not as disconnected phases.
-          </p>
-          <div className="process-orbit" aria-hidden="true">
-            <div className="orbit-ring ring-a" />
-            <div className="orbit-ring ring-b" />
-            <div className="orbit-core">KO</div>
-            <span className="satellite satellite-a">DESIGN</span>
-            <span className="satellite satellite-b">CODE</span>
-            <span className="satellite satellite-c">AI</span>
-          </div>
-        </div>
-        <div className="process-steps">
-          <article className="reveal">
-            <span>Discover</span>
-            <h3>Understand before drawing.</h3>
-            <p>
-              I clarify the product goal, users, context and constraints, then
-              organise what I learn into a useful problem definition.
-            </p>
-          </article>
-          <article className="reveal">
-            <span>Structure</span>
-            <h3>Make complexity navigable.</h3>
-            <p>
-              User flows, information architecture and low-fidelity wireframes
-              help me test the logic before visual polish gets in the way.
-            </p>
-          </article>
-          <article className="reveal">
-            <span>Design & prototype</span>
-            <h3>Give the idea behaviour.</h3>
-            <p>
-              I build responsive interface systems and interactive prototypes
-              that make decisions tangible for users and collaborators.
-            </p>
-          </article>
-          <article className="reveal">
-            <span>Build & learn</span>
-            <h3>Stay close to implementation.</h3>
-            <p>
-              My development knowledge helps me test feasibility, debug issues
-              and iterate with a clearer understanding of the final product.
-            </p>
-          </article>
-        </div>
-      </section>
-
       <section className="about shell" id="about">
-        <div className="portrait-wrap reveal" data-parallax="0.035">
-          <img
-            src="/portrait-1080.webp"
-            srcSet="/portrait-640.webp 640w, /portrait-1080.webp 1080w"
-            sizes="(max-width: 900px) 86vw, 610px"
-            width="1080"
-            height="1920"
-            alt="Kenechukwu Okoye"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="portrait-note glass-card">
-            <span>Currently</span>
-            <strong>Designing at Binary Brawlers</strong>
+        <div className="portrait reveal">
+          <div className="portrait-stamp">
+            <img
+              src="/portrait-1080.webp"
+              srcSet="/portrait-640.webp 640w, /portrait-1080.webp 1080w"
+              sizes="(max-width: 900px) 80vw, 460px"
+              width="1080"
+              height="1920"
+              alt="Kenechukwu Okoye"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
-          <div className="portrait-stamp" aria-hidden="true">DESIGN × CODE × AI</div>
+          <p className="sticker portrait-sticker">
+            Currently designing at <strong>Binary Brawlers</strong>
+          </p>
+          <span className="hand portrait-note">that’s me</span>
         </div>
-
         <div className="about-copy">
-          <p className="eyebrow reveal">About me / 04</p>
-          <h2 className="reveal">
-            Curious by nature,
-            <br />
-            practical by <em>training.</em>
-          </h2>
+          <p className="label reveal">About me</p>
+          <h2 className="reveal">Curious by nature, practical by training.</h2>
           <p className="lead reveal">
-            I’m a product designer with a BSc in Computer Science and a growing
-            practice across digital product design, software and applied AI.
+            I’m a product designer with a B.Sc. in Computer Science, working across digital product design,
+            software and applied AI.
           </p>
           <p className="reveal">
-            You may also find my work under my full name, Kenechukwu
-            Okoye-Chine, or through my online identity, Koda the Great.
+            I care about experiences that balance function and aesthetics. I’m at my best on meaningful
+            products, untangling complex problems and turning them into interfaces people can use without
+            friction. You may also find my work under my full name, Kenechukwu Okoye-Chine, or as Koda the
+            Great.
           </p>
-          <p className="reveal">
-            I care about user-centred experiences that balance function and
-            aesthetics. I’m at my best collaborating on meaningful products,
-            untangling complex problems and turning them into interfaces people
-            can use without friction.
-          </p>
-          <div className="education-card glass-card reveal">
-            <span>Education</span>
-            <strong>BSc Computer Science</strong>
-            <p>Nnamdi Azikiwe University · 2021—2024</p>
-          </div>
-          <div className="cert-card reveal">
-            <span>Certification · Jul 2026</span>
-            <strong>Product Design (UI/UX Design)</strong>
-            <p>TS Academy — practical training in research, wireframing, interface design and prototyping.</p>
-          </div>
-          <div className="skill-list reveal">
-            <span>UI/UX Design</span>
-            <span>Wireframing</span>
-            <span>Prototyping</span>
-            <span>Design Systems</span>
-            <span>AI API Integration</span>
-            <span>Testing & Debugging</span>
-            <span>Database Fundamentals</span>
-            <span>Prompt Engineering</span>
-          </div>
-          <a className="text-link magnetic reveal" href="/Kenechukwu-Okoye-Resume.pdf" download>
-            Download résumé <span aria-hidden="true"><ArrowDown /></span>
+          <dl className="facts reveal">
+            <div>
+              <dt>Education</dt>
+              <dd>B.Sc. Computer Science, Nnamdi Azikiwe University, 2021 — 2024</dd>
+            </div>
+            <div>
+              <dt>Certification</dt>
+              <dd>Product Design (UI/UX), TS Academy, Jul 2026</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>Port Harcourt, Nigeria. Working remotely.</dd>
+            </div>
+          </dl>
+          <a className="button reveal" href="/Kenechukwu-Okoye-Resume.pdf" download>
+            Download résumé <ArrowDown />
           </a>
         </div>
       </section>
 
       <section className="experience shell">
-        <div className="section-heading compact reveal">
-          <p className="eyebrow">Experience / 05</p>
-          <h2>
-            Where I’ve worked
-            <br />
-            and <em>grown.</em>
-          </h2>
+        <div className="section-head reveal">
+          <p className="label">Experience</p>
+          <h2>Where I’ve worked and grown.</h2>
         </div>
-        <div className="timeline">
-          {experience.map((item, index) => (
-            <article className="reveal" key={item.company}>
-              <span className="timeline-index">0{index + 1}</span>
+        <ol className="timeline">
+          {experience.map((item) => (
+            <li className="reveal" key={item.company}>
+              <p className="timeline-period">{item.period}</p>
               <div>
                 <h3>{item.role}</h3>
-                <p>{item.company}</p>
+                <p className="timeline-company">
+                  {item.company} · {item.place}
+                </p>
               </div>
-              <p className="timeline-detail">{item.detail}</p>
-              <div className="timeline-meta">
-                <span>{item.period}</span>
-                <span>{item.place}</span>
-              </div>
-            </article>
+              <p>{item.detail}</p>
+            </li>
           ))}
+        </ol>
+      </section>
+
+      <section className="kit shell">
+        <div className="section-head reveal">
+          <p className="label">Tools I use</p>
+          <h2>The kit on my desk.</h2>
+        </div>
+        <div className="kit-rows">
+          <div className="reveal">
+            <p className="kit-title">Thinking &amp; designing</p>
+            <ul className="kit-list">
+              {designKit.map((tool) => (
+                <li key={tool.name}>
+                  <img src={tool.logo} alt="" width="28" height="28" loading="lazy" />
+                  {tool.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="reveal">
+            <p className="kit-title">Building &amp; shipping</p>
+            <ul className="kit-list">
+              {buildKit.map((tool) => (
+                <li key={tool.name}>
+                  <img src={tool.logo} alt="" width="28" height="28" loading="lazy" />
+                  {tool.name}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section className="principles shell">
-        <div className="section-heading reveal">
-          <p className="eyebrow">Working principles / 06</p>
-          <h2>
-            What guides
-            <br />
-            my <em>decisions.</em>
-          </h2>
+      <section className="rules shell">
+        <div className="section-head reveal">
+          <p className="label">Working principles</p>
+          <h2>House rules.</h2>
         </div>
-        <div className="principle-list">
-          <article className="reveal">
-            <span>01</span>
-            <h3>Clarity earns trust.</h3>
-            <p>Good products explain themselves through hierarchy, language and predictable behaviour.</p>
-          </article>
-          <article className="reveal">
-            <span>02</span>
-            <h3>Technology needs a reason.</h3>
-            <p>I use AI and software capability when they improve the experience—not just because they are available.</p>
-          </article>
-          <article className="reveal">
-            <span>03</span>
-            <h3>Design is collaborative.</h3>
-            <p>The strongest outcomes come from sharing unfinished thinking, testing assumptions and learning together.</p>
-          </article>
-        </div>
+        <ol className="rule-list">
+          {rules.map((rule, index) => (
+            <li className="reveal" key={rule.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{rule.title}</h3>
+              <p>{rule.text}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      <footer id="contact">
-        <div className="shell footer-inner">
-          <p className="eyebrow reveal">Have a project in mind?</p>
+      <footer className="finale" id="contact">
+        <div className="shell">
+          <p className="label">Curtain call</p>
           <h2 className="reveal">
-            Let’s make something
-            <br />
-            <em>worth using.</em>
+            Let’s make something <span>worth using.</span>
           </h2>
-          <a className="email-link magnetic reveal" href="mailto:keneochine@gmail.com">
-            <span className="email-intro">
-              <small>Start a conversation</small>
-              <strong>keneochine@gmail.com</strong>
-            </span>
-            <span className="email-action" aria-hidden="true"><ArrowUpRight /></span>
+          <a className="finale-email reveal" href={`mailto:${EMAIL}`}>
+            {EMAIL} <ArrowUpRight />
           </a>
-          <div className="social-links reveal" aria-label="Social profiles">
-            <a
-              href="https://github.com/KenechukwuDani7"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Kenechukwu Okoye on GitHub"
-            >
-              <span className="social-logo github-logo" aria-hidden="true">
-                <img src="/tools/brands/github.svg" alt="" />
-              </span>
-              <span>
-                <small>Code & projects</small>
-                <strong>GitHub</strong>
-              </span>
-              <i aria-hidden="true"><ArrowUpRight /></i>
+          <div className="finale-links">
+            <a href={GITHUB} target="_blank" rel="noreferrer">
+              <img src="/tools/brands/github.svg" alt="" width="20" height="20" /> GitHub <ArrowUpRight />
+            </a>
+            <a href="/Kenechukwu-Okoye-Resume.pdf" download>
+              Résumé <ArrowDown />
+            </a>
+            <a href="#top">
+              Back to top <ArrowUp />
             </a>
           </div>
-          <div className="footer-bottom">
-            <p>© 2026 Kenechukwu Okoye</p>
-            <div>
-              <a href="mailto:keneochine@gmail.com">Email</a>
-              <a href="https://github.com/KenechukwuDani7" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
-              <a href="#top">Back to top <ArrowUp /></a>
-            </div>
-          </div>
+          <p className="finale-small">© 2026 Kenechukwu Okoye. Designed and built by me in Port Harcourt.</p>
         </div>
       </footer>
     </main>

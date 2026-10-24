@@ -39,14 +39,17 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /application\/ld\+json/i);
   assert.match(html, /Kenechukwu Okoye-Chine/);
   assert.match(html, /Koda the Great/);
-  assert.match(html, /Products shaped from/);
+  assert.match(html, /Things I’ve designed, and built\./);
+  assert.match(html, /class="curtain" aria-hidden="true"/);
+  assert.match(html, /Admit one/);
   assert.match(html, /aria-label="View Mentra case study"/);
   assert.match(html, /aria-label="View OSUKO Construction case study"/);
   assert.match(html, /aria-label="View Golden Bills case study"/);
   assert.doesNotMatch(html, /aria-label="View Chow Now case study"/);
   assert.doesNotMatch(html, /Sabian Pay/);
   assert.match(html, /Tools I use/);
-  assert.match(html, /Build &amp; delivery stack/);
+  assert.match(html, /Building &amp; shipping/);
+  assert.doesNotMatch(html, /[↗↘↓↑✦]/);
   assert.match(html, /React/);
   assert.match(html, /Expo/);
   assert.match(html, /TypeScript/);
@@ -106,25 +109,24 @@ test("server-renders the Golden Bills case study", async () => {
   assert.match(html, /rel="canonical" href="https:\/\/kenechukwuokoye\.vercel\.app\/work\/golden-bills"/i);
 });
 
-test("keeps the portfolio responsive and touch-friendly", async () => {
-  const [css, motion, page, layout] = await Promise.all([
+test("keeps the portfolio responsive, flat and motion-safe", async () => {
+  const [globals, css, motion, page, layout] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
-    readFile(new URL("../app/MotionLayer.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/home.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/HomeMotion.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
   ]);
 
   assert.match(css, /@media \(max-width: 1000px\)/);
-  assert.match(css, /@media \(max-width: 600px\)/);
+  assert.match(css, /@media \(max-width: 760px\)/);
   assert.match(css, /@media \(max-width: 420px\)/);
-  assert.match(css, /@media \(max-width: 350px\)/);
-  assert.match(css, /@media \(pointer: coarse\)/);
-  assert.match(css, /footer#contact\s*\{/);
-  assert.doesNotMatch(css, /(?:^|\n)footer\s*\{\s*background:/);
-  assert.match(css, /overflow-x:\s*(?:hidden|clip)/);
-  assert.match(css, /font-size:\s*clamp\(2\.9rem, 14\.4vw, 4\.35rem\)/);
-  assert.match(motion, /window\.innerWidth > 768/);
-  assert.match(motion, /\(pointer: fine\)/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(globals, /overflow-x:\s*(?:hidden|clip)/);
+  // Flat 2D look: no soft gradients, glows or blur.
+  assert.doesNotMatch(css, /linear-gradient\((?!90deg, #)|backdrop-filter|blur\(/);
+  assert.match(motion, /prefers-reduced-motion: reduce/);
+  assert.match(page, /<noscript>/);
   assert.doesNotMatch(page, /kenechukwu-okoye-chine-0a3918413/);
   assert.match(page, /github\.com\/KenechukwuDani7/);
   assert.match(layout, /alternates:\s*\{ canonical: "\/" \}/);
@@ -134,28 +136,16 @@ test("keeps the portfolio responsive and touch-friendly", async () => {
   assert.match(layout, /<Analytics \/>/);
 });
 
-test("keeps the mobile hero name intact and serves the GitHub footer mark", async () => {
-  const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-
-  assert.match(pageSource, /\/tools\/brands\/github\.svg/);
-  assert.doesNotMatch(pageSource, /\/tools\/github\.png/);
-  assert.match(css, /\.hero-name-row\s*\{[^}]*white-space:\s*nowrap/s);
-  assert.match(css, /\.github-logo img\s*\{[^}]*filter:\s*invert\(1\)/s);
-});
-
-test("makes project artwork an accessible case-study link", async () => {
+test("serves the GitHub mark in the footer and links project artwork", async () => {
   const [pageSource, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/home.css", import.meta.url), "utf8"),
   ]);
 
-  assert.match(css, /\.project-visual-link\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/s);
-  assert.match(css, /\.project-visual-link:focus-visible/);
-  assert.match(css, /\.project-visual-link\s*>\s*span\s*\{[^}]*background:\s*rgba\(255,255,255,\.94\)/s);
-  assert.match(css, /@media \(max-width: 600px\)[\s\S]*?\.project-visual-link\s*\{[^}]*align-items:\s*flex-start[^}]*justify-content:\s*flex-end/s);
-  assert.match(css, /font-size:\s*\.52rem/);
-  assert.doesNotMatch(pageSource, /project-case-link/);
+  assert.match(pageSource, /\/tools\/brands\/github\.svg/);
+  assert.match(css, /\.finale-links img\s*\{[^}]*filter:\s*brightness\(0\) invert\(1\)/s);
+  assert.match(pageSource, /aria-label=\{`View \$\{project\.title\} case study`\}/);
+  assert.match(css, /\.button:focus-visible/);
 });
 
 test("publishes search-engine discovery files", async () => {
